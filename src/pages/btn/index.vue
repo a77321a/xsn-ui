@@ -3,7 +3,7 @@
  * @Author:
  * @Date: 2019-12-29 17:02:27
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2019-12-29 18:07:09
+ * @LastEditTime : 2019-12-29 18:27:43
  -->
 <template>
   <div>
@@ -21,10 +21,10 @@
     <x-btn size="md" disabled>禁用按钮</x-btn>
 
     <h6>loading</h6>
-    <x-btn label="loading" size="md" :loading="true" />
+    <x-btn label="loading" size="md" :loading="true">加载中</x-btn>
 
     <h6>flip</h6>
-    <x-btn label="flip" icon="add" size="md" flip />
+    <x-btn label="flip" icon="add" size="md" flip>图标</x-btn>
 
     <!--  -->
     <f-table
@@ -50,13 +50,13 @@
 import config from './config'
 export default {
   name: 'pageBtn',
-  data () {
+  data() {
     return {
       config
     }
   },
   methods: {
-    _click () {
+    _click() {
       // this.$notify.success('click success')
     }
   }
