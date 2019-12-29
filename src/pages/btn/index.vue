@@ -1,3 +1,10 @@
+<!--
+ * @Descripttion:
+ * @Author:
+ * @Date: 2019-12-29 17:02:27
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2019-12-29 18:07:09
+ -->
 <template>
   <div>
     <a
@@ -5,14 +12,13 @@
       target="_blank"
     >样例源码</a>
     <h6>基本用法:</h6>
-    <x-btn label="size: sm" size="sm" @click="_click" />
+    <x-btn size="sm" @click="_click">size:sm</x-btn>
 
-    <x-btn label="size: md" bgcolor="positive" size="md" @click="_click" />
-
-    <x-btn label="size: lg" bgcolor="negative" size="lg" @click="_click" />
+    <x-btn size="md" @click="_click">size:md</x-btn>
+    <x-btn size="lg" bgcolor="negative" @click="_click">size:lg</x-btn>
 
     <h6>禁用</h6>
-    <x-btn label="disabled" size="md" disabled />
+    <x-btn size="md" disabled>禁用按钮</x-btn>
 
     <h6>loading</h6>
     <x-btn label="loading" size="md" :loading="true" />

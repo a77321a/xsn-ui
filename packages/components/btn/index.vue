@@ -1,15 +1,16 @@
 <template>
   <button
-    class="x-btn f-focusable"
+    class="x-btn x-focusable"
     :disabled="buttonDisabled || loading"
     :class="_btnClass"
     @click.stop="_click"
     v-loading="loading"
   >
-    <div class="f-focus-helper"></div>
+    <div class="x-focus-mask"></div>
     <x-icon v-if="icon" :name="icon" size="inherit" style="color: inherit" />
-    <slot></slot>
-    <template v-if="label">{{ label }}</template>
+    <span v-if="$slots.default">
+      <slot></slot>
+    </span>
   </button>
 </template>
 
@@ -86,11 +87,13 @@ export default {
       if (this.textColor) {
         arr.push('text-' + this.textColor)
       }
-
-      if (this.round) {
-        arr.push('f-btn-round')
+      if (this.disabled) {
+        arr.push('is-disabled')
       }
-      arr.push('f-btn-' + this.size)
+      if (this.round) {
+        arr.push('x-btn-round')
+      }
+      arr.push('x-btn-' + this.size)
       return arr
     },
     buttonDisabled () {
@@ -104,6 +107,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

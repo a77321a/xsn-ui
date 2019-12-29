@@ -421,9 +421,13 @@ label {
   }
 }
 
-.disabled {
-  cursor: not-allowed !important;
-  opacity: 0.7 !important;
+.is-disabled,
+.is-disabled:focus,
+.is-disabled:hover {
+  color: #c0c4cc;
+  cursor: not-allowed;
+  background-image: none;
+  border-color: #ebeef5;
 }
 
 .hidden {
@@ -460,7 +464,7 @@ label {
   }
 }
 
-.f-focus-helper {
+.x-focus-mask {
   position: absolute;
   left: 0;
   top: 0;
@@ -472,12 +476,12 @@ label {
   transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
-.f-focusable {
+.x-focusable {
   position: relative;
 
   &:hover,
   &:focus {
-    .f-focus-helper {
+    .x-focus-mask {
       opacity: 0.15;
       background-color: currentColor;
     }
