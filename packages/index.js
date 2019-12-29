@@ -2,12 +2,12 @@
  * @Descripttion: 
  * @Author: 
  * @Date: 2019-12-29 11:28:55
- * @LastEditors: 
- * @LastEditTime: 2019-12-29 11:29:52
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2019-12-29 16:21:26
  */
 // 导入组件
-import TimeDeadLine from './TimeDeadLine'
-
+import TimeDeadLine from './TimeDeadLine/index'
+console.log(TimeDeadLine)
 // 存储组件列表
 const components = [
   TimeDeadLine

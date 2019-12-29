@@ -2,26 +2,46 @@
   "name": "xsn-ui",
   "version": "0.1.0",
   "private": false,
-  "keyword": "xsn-ui",
+  "Keywords": "xsn-ui",
   "author": "a77321a",
+  "main": "packages/index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue-xsn-ui --dest lib packages/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run release",
+    "release": "npm run build:dev && npm run build:prod",
+    "build:prod": "NODE_ENV=production rollup -c build/rollup.build.js",
+    "build:dev": "NODE_ENV=development rollup -c build/rollup.build.js"
   },
-  "dependencies": {
-    "core-js": "^3.4.4",
-    "vue": "^2.6.10"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-import": "^1.12.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "cssnano": "^4.1.10",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-url": "^8.0.0",
+    "rollup": "^1.18.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-flow": "^1.1.1",
+    "rollup-plugin-image": "^1.0.2",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "rollup-plugin-url": "^2.2.2"
   },
   "eslintConfig": {
     "root": true,
@@ -29,7 +49,6 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
       "eslint:recommended"
     ],
     "rules": {},

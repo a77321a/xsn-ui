@@ -1,11 +1,5 @@
-
-/*
- * @Descripttion: 
- * @Author: 
- * @Date: 2019-12-29 11:28:40
- * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2019-12-29 11:34:27
- */
+/* * @Descripttion: * @Author: * @Date: 2019-12-29 11:28:40 * @LastEditors :
+Please set LastEditors * @LastEditTime : 2019-12-29 11:34:27 */
 <template>
   <!-- 倒计时组件 -->
   <div class="x-time-deadline">
@@ -20,7 +14,7 @@
     <span class="second" v-show="isShow">{{ clocker }}</span>
   </div>
 </template>
-  <script>
+<script>
 export default {
   name: 'TimeDeadLine',
   props: {
