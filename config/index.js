@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 
+ * @Author: 
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-06 18:00:17
+ */
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
@@ -45,11 +52,11 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../lib/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsRoot: path.resolve(__dirname, '../lib'),
+    assetsSubDirectory: '',
     assetsPublicPath: '/',
 
     /**

@@ -72,7 +72,7 @@
       </template>
     </f-modal>
 
-    <f-table
+    <x-table
       class="mt-md"
       title="配置项详解"
       hide-bottom
@@ -81,7 +81,7 @@
     />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="插槽"
       hide-bottom

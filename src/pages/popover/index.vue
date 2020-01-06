@@ -21,7 +21,7 @@
       </f-popover>
     </div>
 
-    <f-table
+    <x-table
       class="mt-md"
       title="emit"
       hide-bottom
@@ -29,7 +29,7 @@
       :columns="config.emitConfig.columns"
     />
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="插槽"
       hide-bottom

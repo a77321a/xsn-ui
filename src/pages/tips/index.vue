@@ -19,7 +19,7 @@
     </span>
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="slot"
       hide-bottom

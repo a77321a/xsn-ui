@@ -7,13 +7,17 @@
     >
       <h5 class="no-margin no-padding text-bold toolbar-title">{{ title ? title : '' }}</h5>
       <div v-if="$scopedSlots['top-right']">
-        <slot
-          name="top-right"
-        />
+        <slot name="top-right" />
       </div>
     </div>
 
-    <table class="f-table">
+    <table
+      :class="[{
+      'x-table--striped': stripe,
+      'x-table--border': border,
+    }, tableSize ? `x-table--${ tableSize }` : '']"
+      class="f-table"
+    >
       <thead v-if="!noHeader">
         <slot name="head" :columns="columns"></slot>
         <tr v-if="!$scopedSlots.head">
@@ -25,7 +29,7 @@
               width: col.width ? col.width : 'auto'
             }"
           >
-            {{ col.name }}
+            <div class="cell">{{ col.name }}</div>
           </th>
         </tr>
       </thead>
@@ -33,10 +37,7 @@
       <tbody>
         <slot name="body" :row="_computedTableData" :columns="columns"></slot>
         <template v-if="!$scopedSlots.body && _computedTableData.length > 0 && !loading">
-          <tr
-            v-for="(tr, tridx) in _computedTableData"
-            :key="'tbody_tr_' + tridx"
-          >
+          <tr v-for="(tr, tridx) in _computedTableData" :key="'tbody_tr_' + tridx">
             <td
               v-for="(col, tdidx) in columns"
               :key="'tbody_tr_' + tridx + 'thead_td_' + tdidx"
@@ -45,26 +46,18 @@
                 width: col.width ? col.width : ''
               }"
             >
-              {{ tr[col.field] }}
+              <div class="cell">{{ tr[col.field] }}</div>
             </td>
           </tr>
         </template>
 
         <!-- no-data -->
         <tr v-if=" _computedTableData.length === 0 && !loading">
-          <td
-            class="text-center no-data-container"
-            colspan="999"
-          >
-            {{ loading ? '' :noDataMsg }}
-          </td>
+          <td class="text-center no-data-container" colspan="999">{{ loading ? '' :noDataMsg }}</td>
         </tr>
       </tbody>
     </table>
-    <div
-      v-if="!hideBottom && pagination"
-      class="text-right pa-sm font-normal text-faded"
-    >
+    <div v-if="!hideBottom && pagination" class="text-right pa-sm font-normal text-faded">
       当前页：
       <f-select
         v-model="currentPage"
@@ -73,8 +66,7 @@
         class="text-center inline-block"
         style="width: 60px"
         @input="handlePageChanged"
-      />
-      每页行数：
+      />每页行数：
       <f-select
         v-model="currentRowsPerPage"
         :options="_computedRowsPerPageOptions"
@@ -89,8 +81,16 @@
 
 <script>
 export default {
-  name: 'FTable',
+  name: 'XTable',
   props: {
+    size: {
+      type: String,
+      default () {
+        return 'medium'
+      }
+    },
+    stripe: Boolean,
+    border: Boolean,
     tableData: {
       type: Array,
       default () {
@@ -159,6 +159,9 @@ export default {
     }
   },
   computed: {
+    tableSize () {
+      return this.size
+    },
     _computedRowsPerPageOptions () {
       let result = this.pagination.rowsPerPageOptions.map(v => {
         let obj = {}
@@ -183,7 +186,11 @@ export default {
     },
     _computedTableData () {
       if (this.pagination && !this.hideBottom) {
-        return this.tableData.slice(this.currentRowsPerPage * (this.currentPage - 1), this.currentRowsPerPage + this.currentRowsPerPage * (this.currentPage - 1))
+        return this.tableData.slice(
+          this.currentRowsPerPage * (this.currentPage - 1),
+          this.currentRowsPerPage +
+            this.currentRowsPerPage * (this.currentPage - 1)
+        )
       } else {
         return this.tableData
       }

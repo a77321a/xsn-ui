@@ -32,7 +32,7 @@
     </div>
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="配置项详解"
       hide-bottom
@@ -41,7 +41,7 @@
     />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="事件"
       hide-bottom
@@ -50,7 +50,7 @@
     />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="emit"
       hide-bottom
@@ -58,14 +58,14 @@
       :columns="config.emitConfig.columns"
     />
 
-    <f-table
+    <x-table
       class="mt-md"
       title="子组件"
       hide-bottom
       :tableData="config.childSettingConfig.tableData"
       :columns="config.childSettingConfig.columns"
     />
-    <f-table
+    <x-table
       class="mt-md"
       title="子组件插槽"
       hide-bottom

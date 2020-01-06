@@ -57,7 +57,7 @@
       @search="_search"
     />
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="配置项详解"
       hide-bottom
@@ -66,7 +66,7 @@
     />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="emit"
       hide-bottom

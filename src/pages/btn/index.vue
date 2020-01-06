@@ -32,7 +32,7 @@
     <h4>加载</h4>
     <x-btn label="loading" type="primary" size="medium" :loading="true">加载中</x-btn>
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="配置项详解"
       hide-bottom
@@ -41,7 +41,7 @@
     />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="emit"
       hide-bottom

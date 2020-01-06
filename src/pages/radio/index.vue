@@ -1,14 +1,15 @@
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/radio/index.vue" target="_blank">
-      样例源码
-    </a>
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/radio/index.vue"
+      target="_blank"
+    >样例源码</a>
     <h6>基本用法：</h6>
-    <f-radio v-model="radioModel" val="test1" label="test1"/>
-    <f-radio v-model="radioModel" val="test2" label="test2"/>
-    <f-radio v-model="radioModel" val="test3" label="test3"/>
+    <f-radio v-model="radioModel" val="test1" label="test1" />
+    <f-radio v-model="radioModel" val="test2" label="test2" />
+    <f-radio v-model="radioModel" val="test3" label="test3" />
 
-    <f-table
+    <x-table
       class="mt-md"
       title="配置项详解"
       hide-bottom
@@ -17,7 +18,7 @@
     />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="emit"
       hide-bottom
@@ -31,7 +32,7 @@
 import config from './config'
 export default {
   name: 'pageRadio',
-  data () {
+  data() {
     return {
       config,
       radioModel: ''
@@ -41,5 +42,4 @@ export default {
 </script>
 
 <style>
-
 </style>

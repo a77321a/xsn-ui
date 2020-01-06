@@ -1,19 +1,28 @@
+<!--
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-06 16:27:33
+ -->
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/table/index.vue" target="_blank">
-      样例源码
-    </a>
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/table/index.vue"
+      target="_blank"
+    >样例源码</a>
     <!--  -->
-    <f-table
+
+    <x-table
       class="mt-md"
       title="配置项详解"
       hide-bottom
+      stripe
       :tableData="config.settingConfig.tableData"
       :columns="config.settingConfig.columns"
     />
-
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="emit"
       hide-bottom
@@ -21,7 +30,7 @@
       :columns="config.emitConfig.columns"
     />
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="插槽"
       hide-bottom

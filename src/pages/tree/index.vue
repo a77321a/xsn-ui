@@ -1,63 +1,31 @@
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/tree/index.vue" target="_blank">
-      样例源码
-    </a>
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/tree/index.vue"
+      target="_blank"
+    >样例源码</a>
 
-    <h6>
-      基本用法（只有点击文本或者复选框才会选择，点击图标或者整行只有展开/收起效果）：
-    </h6>
+    <h6>基本用法（只有点击文本或者复选框才会选择，点击图标或者整行只有展开/收起效果）：</h6>
 
-    <f-tree
-      :nodes="treeData"
-      :selected.sync="selection"
-    />
+    <f-tree :nodes="treeData" :selected.sync="selection" />
 
-    <h6>
-      一次只能展开一个节点
-    </h6>
-    <f-tree
-      :nodes="treeData"
-      accordion
-    />
+    <h6>一次只能展开一个节点</h6>
+    <f-tree :nodes="treeData" accordion />
 
-    <h6>
-      只有叶子节点（最后一级）才能被选择
-    </h6>
-    <f-tree
-      :nodes="treeData"
-      leaf
-    />
+    <h6>只有叶子节点（最后一级）才能被选择</h6>
+    <f-tree :nodes="treeData" leaf />
 
-    <h6>
-      多选
-    </h6>
-    <f-tree
-      :nodes="treeData"
-      :selected.sync="mutipleSelection"
-      mutiple
-    />
+    <h6>多选</h6>
+    <f-tree :nodes="treeData" :selected.sync="mutipleSelection" mutiple />
 
-    <h6>
-      多选，并且只有叶子节点（最后一级）才能被选择
-    </h6>
-    <f-tree
-      :nodes="treeData"
-      :selected.sync="mutipleSelection"
-      mutiple
-      leaf
-    />
+    <h6>多选，并且只有叶子节点（最后一级）才能被选择</h6>
+    <f-tree :nodes="treeData" :selected.sync="mutipleSelection" mutiple leaf />
 
-    <h6>
-      全部展开
-    </h6>
-    <f-tree
-      :nodes="treeData"
-      expand-all
-    />
+    <h6>全部展开</h6>
+    <f-tree :nodes="treeData" expand-all />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="配置项详解"
       hide-bottom
@@ -66,14 +34,13 @@
     />
 
     <!--  -->
-    <f-table
+    <x-table
       class="mt-md"
       title="emit"
       hide-bottom
       :tableData="config.emitConfig.tableData"
       :columns="config.emitConfig.columns"
     />
-
   </div>
 </template>
 
@@ -81,7 +48,7 @@
 import config from './config'
 export default {
   name: 'pageTree',
-  data () {
+  data() {
     return {
       config,
       treeData: [

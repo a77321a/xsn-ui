@@ -1,3 +1,10 @@
+<!--
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors:
+ * @LastEditTime: 2020-01-06 16:06:03
+ -->
 <template>
   <button
     class="x-btn"
@@ -17,7 +24,6 @@
     @click.stop="handleClick"
     v-loading="loading"
   >
-    <!-- <div class="x-focus-mask"></div> -->
     <x-icon v-if="icon" :name="icon" size="inherit" style="color: inherit" />
     <span v-if="$slots.default">
       <slot></slot>
@@ -55,12 +61,6 @@ export default {
       }
     },
     round: {
-      type: Boolean,
-      default () {
-        return false
-      }
-    },
-    flip: {
       type: Boolean,
       default () {
         return false
