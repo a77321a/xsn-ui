@@ -7,23 +7,23 @@
       基本用法(v-model控制开关):
     </h6>
 
-    <f-btn
+    <x-btn
       label="点击弹窗"
       @click="show.middle = true"
     />
-    <f-btn
+    <x-btn
       label="左侧弹窗"
       @click="show.left = true"
     />
-    <f-btn
+    <x-btn
       label="右侧弹窗"
       @click="show.right = true"
     />
-    <f-btn
+    <x-btn
       label="顶部弹窗"
       @click="show.top = true"
     />
-    <f-btn
+    <x-btn
       label="底部弹窗"
       @click="show.bottom = true"
     />
@@ -35,7 +35,7 @@
       </template>
       <template slot="footer">
         <div class="text-right full-width">
-          <f-btn icon="save" label="保存" bg-color="positive"/>
+          <x-btn icon="save" label="保存" bg-color="positive"/>
         </div>
       </template>
     </f-modal>

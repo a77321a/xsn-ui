@@ -22,10 +22,10 @@ a {
   color: var(--color-primary);
 }
 
-p,
-span {
-  font-size: 12px;
-}
+// p,
+// span {
+//   font-size: 12px;
+// }
 
 dialog {
   padding: 0;
@@ -124,28 +124,122 @@ label {
 
 .x-btn {
   cursor: pointer;
+  font-size: 14px;
   position: relative;
   outline: none;
-  border: none;
+  border: 1px solid #dcdfe6;
   border-radius: 4px;
   padding: 8px 15px;
   text-align: center;
   overflow: hidden;
-  border: none;
+  color: #606266;
+  transition: all 0.2s;
+  & + & {
+    margin-left: 10px;
+  }
+  &:hover,
+  &:focus {
+    opacity: 0.75;
+    transition: all 0.2s;
+  }
+  &:active {
+    transition: all 0.2s;
+    opacity: 0.95;
+  }
 }
-.x-btn-sm {
+.x-btn--small {
   font-size: 9px;
 }
-.x-btn-md {
+.x-btn--medium {
   font-size: 14px;
 }
-.x-btn-lg {
-  font-size: 20px;
+.x-btn--large {
+  font-size: 16px;
 }
-.x-btn-round {
+.x-btn--default {
+  color: #515a6e;
+  background-color: #fff;
+  border-color: #dcdee2;
+}
+.x-btn--success {
+  color: #fff;
+  background-color: #67c23a;
+  border-color: #67c23a;
+}
+.x-btn--error {
+  color: #fff;
+  background-color: #ed4014;
+  border-color: #ed4014;
+}
+.x-btn.is-round {
+  border-radius: 20px;
+}
+.x-btn--primary {
+  color: #fff;
+  background-color: #2db7f5;
+  border-color: #2db7f5;
+}
+.x-btn--text {
+  color: #2db7f5;
+  background-color: transparent;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  &:hover {
+    cursor: default;
+    background-color: transparent;
+  }
+  & > span {
+    cursor: pointer;
+  }
+}
+.x-btn.is-long {
+  width: 100%;
+}
+.x-btn.is-loading {
+  position: relative;
+  pointer-events: none;
+  border: none;
+  &:before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: inherit;
+    background-color: rgba(255, 255, 255, 0.35);
+  }
+}
+.x-btn.is-disabled {
+  // position: relative;
+  // pointer-events: none;
+  border: none;
+  // cursor: not-allowed;
+  &:hover {
+    opacity: 1;
+    transition: none;
+  }
+  &:before {
+    cursor: not-allowed;
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: inherit;
+    background-color: rgba(255, 255, 255, 0.35);
+  }
+  cursor: not-allowed;
+  background-image: none;
+}
+.x-btn.is-circle {
+  width: 32px;
+  height: 32px;
   padding: 0;
-  height: 1.2rem;
-  width: 1.2rem;
+  font-size: 16px;
   border-radius: 50%;
 }
 .x-btn:after {
@@ -158,16 +252,15 @@ label {
   left: 0;
   pointer-events: none;
   //设置径向渐变
-  background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
-  background-repeat: no-repeat;
-  background-position: 0% 0%;
-  transform: scale(10, 10);
-  opacity: 0;
-  transition: transform 0.5s, opacity 0.5s;
+  // background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+  // background-repeat: no-repeat;
+  // background-position: 0% 0%;
+  // transform: scale(10, 10);
+  // opacity: 0;
+  // transition: transform 0.5s, opacity 0.5s;
 }
 
 .x-btn:active:after {
-  transform: scale(0, 0);
   opacity: 0.3;
   //设置初始状态
   transition: 0.1s;
@@ -421,14 +514,14 @@ label {
   }
 }
 
-.is-disabled,
-.is-disabled:focus,
-.is-disabled:hover {
-  color: #c0c4cc;
-  cursor: not-allowed;
-  background-image: none;
-  border-color: #ebeef5;
-}
+// .is-disabled,
+// .is-disabled:focus,
+// .is-disabled:hover {
+//   color: #c0c4cc;
+//   cursor: not-allowed;
+//   background-image: none;
+//   border-color: #ebeef5;
+// }
 
 .hidden {
   display: none !important;
@@ -476,17 +569,16 @@ label {
   transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
-.x-focusable {
-  position: relative;
-
-  &:hover,
-  &:focus {
-    .x-focus-mask {
-      opacity: 0.15;
-      background-color: currentColor;
-    }
-  }
-}
+// .x-focusable {
+//   position: relative;
+//   &:hover,
+//   &:focus {
+//     .x-focus-mask {
+//       opacity: 0.15;
+//       background-color: currentColor;
+//     }
+//   }
+// }
 
 .x-breadcrumb {
   width: 100%;

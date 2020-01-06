@@ -15,7 +15,7 @@
     <h6>
       Loading:
     </h6>
-    <f-btn
+    <x-btn
       label="loading"
       @click="toggleLoading"
     />

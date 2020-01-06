@@ -1,12 +1,23 @@
 <template>
   <button
-    class="x-btn x-focusable"
+    class="x-btn"
     :disabled="buttonDisabled || loading"
-    :class="_btnClass"
-    @click.stop="_click"
+    :type="type"
+    :class="[
+      type ? 'x-btn--' + type : '',
+      buttonSize ? 'x-btn--' + buttonSize : '',
+      {
+        'is-disabled': buttonDisabled,
+        'is-loading': loading,
+        'is-round': round,
+        'is-circle': circle,
+        'is-long': long
+      }
+      ]"
+    @click.stop="handleClick"
     v-loading="loading"
   >
-    <div class="x-focus-mask"></div>
+    <!-- <div class="x-focus-mask"></div> -->
     <x-icon v-if="icon" :name="icon" size="inherit" style="color: inherit" />
     <span v-if="$slots.default">
       <slot></slot>
@@ -18,11 +29,12 @@
 export default {
   name: 'XBtn',
   props: {
+    long: Boolean,
     size: {
-      type: String,
-      default () {
-        return 'md'
-      }
+      type: String
+      // default () {
+      //   return 'medium'
+      // }
     },
     label: {
       type: String,
@@ -30,10 +42,10 @@ export default {
         return ''
       }
     },
-    bgColor: {
+    type: {
       type: String,
       default () {
-        return 'primary'
+        return 'defalut'
       }
     },
     textColor: {
@@ -60,6 +72,7 @@ export default {
         return false
       }
     },
+    circle: Boolean,
     icon: {
       type: String,
       default () {
@@ -74,35 +87,16 @@ export default {
     }
   },
   computed: {
-    _btnClass () {
-      let arr = []
-      if (this.flip) {
-        arr.push('bg-white')
-        arr.push(
-          this.textColor === 'white' ? 'text-black' : 'text-' + this.textColor
-        )
-      } else {
-        arr.push('bg-' + this.bgColor)
-      }
-      if (this.textColor) {
-        arr.push('text-' + this.textColor)
-      }
-      if (this.disabled) {
-        arr.push('is-disabled')
-      }
-      if (this.round) {
-        arr.push('x-btn-round')
-      }
-      arr.push('x-btn-' + this.size)
-      return arr
+    buttonSize () {
+      return this.size
     },
     buttonDisabled () {
       return this.disabled
     }
   },
   methods: {
-    _click () {
-      this.$emit('click')
+    handleClick (evt) {
+      this.$emit('click', evt)
     }
   }
 }

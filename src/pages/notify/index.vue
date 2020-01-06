@@ -6,28 +6,28 @@
     <h6>
       基本用法:
     </h6>
-    <f-btn
+    <x-btn
       label="info"
       bgColor="info"
       size="md"
       @click="_click('info')"
     />
 
-    <f-btn
+    <x-btn
       label="warning"
       bgColor="warning"
       size="md"
       @click="_click('warning')"
     />
 
-    <f-btn
+    <x-btn
       label="error"
       bgColor="negative"
       size="md"
       @click="_click('error')"
     />
 
-    <f-btn
+    <x-btn
       label="success"
       bgColor="positive"
       size="md"

@@ -1,3 +1,10 @@
+<!--
+ * @Descripttion: 首页
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-06 10:10:48
+ -->
 <template>
   <div>
     <a target="_blank" href="https://github.com/a77321a/xsn-ui">github地址</a>
@@ -14,7 +21,7 @@
 
         // if you have install sass already
 
-        impprt 'xsn-ui/packages/css/style.scss'
+        import 'xsn-ui/packages/css/style.scss'
 
         // else
 
@@ -29,9 +36,7 @@
     </div>
 
     <div class="menu-mobile-wrapper">
-      <h4 class="mt-sm mb-sm">
-        菜单：
-      </h4>
+      <h4 class="mt-sm mb-sm">菜单：</h4>
       <ul>
         <li
           v-for="(menu, idx) in menus"
@@ -48,14 +53,11 @@
               class="menu-item-child"
               :class="$route.path === child.path ? 'text-primary' : ''"
               @click.stop="_link(child)"
-            >
-              {{ child.name }}
-            </li>
+            >{{ child.name }}</li>
           </ul>
         </li>
       </ul>
     </div>
-
   </div>
 </template>
 
@@ -79,5 +81,4 @@ export default {
 </script>
 
 <style>
-
 </style>

@@ -7,7 +7,7 @@
       基本用法:
     </h6>
 
-    <f-btn
+    <x-btn
       label="change percentage"
       @click="_click"
     />

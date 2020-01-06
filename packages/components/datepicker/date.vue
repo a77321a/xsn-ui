@@ -1,11 +1,11 @@
 <template>
   <div class="x-date-picker">
     <div class="toolbar block">
-      <f-btn icon="arrowhead-left-outline" flip round @click="_lastYear" />
-      <f-btn icon="return" flip round @click="_lastMonth" />
+      <x-btn icon="arrowhead-left-outline" flip round @click="_lastYear" />
+      <x-btn icon="return" flip round @click="_lastMonth" />
       <div class="toolbar-title text-center">{{currentPageYear + '年' + currentPageMonth + '月'}}</div>
-      <f-btn icon="next" flip round @click="_nextMonth" />
-      <f-btn icon="arrowhead-right-outline" flip round @click="_nextYear" />
+      <x-btn icon="next" flip round @click="_nextMonth" />
+      <x-btn icon="arrowhead-right-outline" flip round @click="_nextYear" />
     </div>
     <div class="x-date-picker-header">
       <div

@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 
+ * @Author: 
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-06 10:37:48
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -79,7 +86,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        // loader: 'vue-style-loader!css-loader!sass-loader'
       }
     ]
   },

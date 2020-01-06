@@ -3,7 +3,7 @@
  * @Author:
  * @Date: 2019-12-29 17:02:27
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2019-12-29 18:27:43
+ * @LastEditTime : 2020-01-06 15:11:19
  -->
 <template>
   <div>
@@ -11,21 +11,26 @@
       href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/btn/index.vue"
       target="_blank"
     >样例源码</a>
-    <h6>基本用法:</h6>
-    <x-btn size="sm" @click="_click">size:sm</x-btn>
+    <h4>不同尺寸:</h4>
+    <p>Button组件提供三种尺寸，可以在不同场景下选择合适的按钮尺寸。</p>
+    <x-btn type="primary" size="small" @click="_click">小型按钮</x-btn>
+    <x-btn type="primary" size="medium" @click="_click">中等按钮</x-btn>
+    <x-btn type="primary" size="large" @click="_click">大型按钮</x-btn>
+    <h4>基本用法:</h4>
+    <x-btn>默认按钮</x-btn>
+    <x-btn type="primary">主要按钮</x-btn>
+    <x-btn type="success">成功按钮</x-btn>
+    <x-btn type="error">失败按钮</x-btn>
+    <x-btn type="text">文字按钮</x-btn>
+    <x-btn type="primary" round>圆角按钮</x-btn>
+    <x-btn @click="_click" icon="add" circle></x-btn>
+    <p></p>
+    <x-btn type="primary" long>长按钮</x-btn>
 
-    <x-btn size="md" @click="_click">size:md</x-btn>
-    <x-btn size="lg" bgcolor="negative" @click="_click">size:lg</x-btn>
-
-    <h6>禁用</h6>
-    <x-btn size="md" disabled>禁用按钮</x-btn>
-
-    <h6>loading</h6>
-    <x-btn label="loading" size="md" :loading="true">加载中</x-btn>
-
-    <h6>flip</h6>
-    <x-btn label="flip" icon="add" size="md" flip>图标</x-btn>
-
+    <h4>禁用</h4>
+    <x-btn size="medium" type="primary" disabled>禁用按钮</x-btn>
+    <h4>加载</h4>
+    <x-btn label="loading" type="primary" size="medium" :loading="true">加载中</x-btn>
     <!--  -->
     <f-table
       class="mt-md"
@@ -50,18 +55,17 @@
 import config from './config'
 export default {
   name: 'pageBtn',
-  data() {
+  data () {
     return {
       config
     }
   },
   methods: {
-    _click() {
+    _click () {
       // this.$notify.success('click success')
     }
   }
 }
 </script>
 
-<style>
-</style>
+<style></style>

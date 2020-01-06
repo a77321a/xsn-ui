@@ -11,7 +11,7 @@
       <f-card
         title="card title"
       >
-        <f-btn
+        <x-btn
           slot="top-right"
           label="top-right-btn"
           text-color="primary"

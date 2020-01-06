@@ -1,25 +1,32 @@
+/*
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-06 15:14:06
+ */
 export default {
   settingConfig: {
     tableData: [
       {
         props: 'size',
         type: 'String',
-        settings: '按钮大小，可选：sm, md, lg'
+        settings: '按钮大小，可选：small, medium, large'
       },
       {
-        props: 'label',
+        props: 'type',
         type: 'String',
-        settings: '按钮文本'
+        settings: '主题色，默认defalut，可选primary，success，error，text'
       },
       {
-        props: 'bg-color',
-        type: 'String',
-        settings: '背景色， 默认primary，参考菜单‘颜色’'
+        props: 'round',
+        type: 'Boolean',
+        settings: '圆角按钮'
       },
       {
-        props: 'text-color',
-        type: 'String',
-        settings: '字体颜色，默认white，参考菜单‘颜色’'
+        props: 'circle',
+        type: 'Boolean',
+        settings: '图标按钮'
       },
       {
         props: 'loading',
@@ -29,13 +36,7 @@ export default {
       {
         props: 'icon',
         type: 'String',
-        settings: '图标'
-      },
-      {
-        props: 'flip',
-        type: 'Boolean',
-        settings:
-          '背景色设为白色，字体颜色设为black或者textColor，优先级高于bg-color'
+        settings: '前缀图标'
       },
       {
         props: 'disabled',
