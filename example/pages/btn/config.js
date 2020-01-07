@@ -16,7 +16,7 @@ export default {
       {
         props: 'type',
         type: 'String',
-        settings: '主题色，默认defalut，可选primary，success，error，text'
+        settings: '主题色，默认default，可选primary，success，error，text'
       },
       {
         props: 'round',

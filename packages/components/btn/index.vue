@@ -44,58 +44,58 @@ export default {
     },
     label: {
       type: String,
-      default () {
+      default() {
         return ''
       }
     },
     type: {
       type: String,
-      default () {
-        return 'defalut'
+      default() {
+        return 'default'
       }
     },
     textColor: {
       type: String,
-      default () {
+      default() {
         return 'white'
       }
     },
     round: {
       type: Boolean,
-      default () {
+      default() {
         return false
       }
     },
     loading: {
       type: Boolean,
-      default () {
+      default() {
         return false
       }
     },
     circle: Boolean,
     icon: {
       type: String,
-      default () {
+      default() {
         return ''
       }
     },
     disabled: {
       type: Boolean,
-      default () {
+      default() {
         return false
       }
     }
   },
   computed: {
-    buttonSize () {
+    buttonSize() {
       return this.size
     },
-    buttonDisabled () {
+    buttonDisabled() {
       return this.disabled
     }
   },
   methods: {
-    handleClick (evt) {
+    handleClick(evt) {
       this.$emit('click', evt)
     }
   }

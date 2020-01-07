@@ -3,7 +3,7 @@
  * @Author: 辛顺宁
  * @Date: 2019-12-29 17:02:27
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2020-01-06 18:17:25
+ * @LastEditTime : 2020-01-07 15:52:02
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -12,8 +12,8 @@ import App from './App'
 import router from './router'
 
 import xsnUI from '../packages/index.js'
+import '../packages/css/style.scss'
 Vue.use(xsnUI)
-
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({

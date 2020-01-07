@@ -3,7 +3,7 @@
  * @Author: 
  * @Date: 2019-07-31 22:54:20
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2020-01-07 11:39:43
+ * @LastEditTime : 2020-01-07 15:53:39
  */
 'use strict'
 const path = require('path')
@@ -84,10 +84,10 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      }
+      // {
+      //   // test: /\.scss$/,
+      //   // loaders: ["style", "css", "sass"]
+      // }
     ]
   },
   node: {

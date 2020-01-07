@@ -4455,6 +4455,11 @@ label {
   border-color: #dcdee2;
 }
 
+.x-btn--default:hover, .x-btn--default:focus {
+  border-color: #2db7f5;
+  color: #2db7f5;
+}
+
 .x-btn--success {
   color: #fff;
   background-color: #67c23a;

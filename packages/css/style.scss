@@ -160,6 +160,11 @@ label {
   color: #515a6e;
   background-color: #fff;
   border-color: #dcdee2;
+  &:hover,
+  &:focus {
+    border-color: #2db7f5;
+    color: #2db7f5;
+  }
 }
 .x-btn--success {
   color: #fff;
