@@ -1,27 +1,23 @@
+<!--
+ * @Descripttion: 
+ * @Author: 
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors: 
+ * @LastEditTime: 2020-01-07 17:40:32
+ -->
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/card/index.vue" target="_blank">
-      样例源码
-    </a>
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/card/index.vue"
+      target="_blank"
+    >样例源码</a>
 
-    <h6>
-      基本用法:
-    </h6>
+    <h6>基本用法:</h6>
     <div>
-      <f-card
-        title="card title"
-      >
-        <x-btn
-          slot="top-right"
-          label="top-right-btn"
-          text-color="primary"
-          flip
-          @click="_click"
-        />
-        <p>
-          这里是body部分插槽的内容
-        </p>
-      </f-card>
+      <x-card title="card title">
+        <x-btn slot="right" type="primary" @click="_click">操作</x-btn>
+        <p>这里是body部分插槽的内容</p>
+      </x-card>
     </div>
 
     <!--  -->
@@ -48,13 +44,13 @@
 import config from './config'
 export default {
   name: 'pageCard',
-  data () {
+  data() {
     return {
       config
     }
   },
   methods: {
-    _click () {
+    _click() {
       this.$notify.info('click success')
     }
   }

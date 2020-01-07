@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author:
  * @Date: 2020-01-06 09:56:08
- * @LastEditors:
- * @LastEditTime: 2020-01-06 16:02:38
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-07 18:21:28
  -->
 <template>
   <div id="app">
@@ -32,6 +32,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../packages/css/style';
+@import '../packages/css/index';
 @import './css/index';
 </style>

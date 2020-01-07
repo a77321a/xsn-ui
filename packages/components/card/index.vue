@@ -1,17 +1,24 @@
+<!--
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-07 17:44:04
+ -->
 <template>
-  <div class="f-card">
+  <div class="x-card">
     <div class="toolbar">
       <div class="toolbar-title">{{title}}</div>
-      <slot name="top-right"></slot>
+      <slot name="right"></slot>
       <x-btn
+        size="small"
         :icon="isShowBody ? 'arrowTop-fill' : 'arrowBottom'"
-        flip
-        round
+        circle
         class="ml-sm"
         @click="_toogleShowBody"
       />
     </div>
-    <div class="f-card-body" :class="bodyClass" :style="bodyStyle" v-show="isShowBody">
+    <div class="x-card-body" :class="bodyClass" :style="bodyStyle" v-show="isShowBody">
       <slot></slot>
     </div>
   </div>
@@ -19,34 +26,34 @@
 
 <script>
 export default {
-  name: 'FCard',
+  name: 'XCard',
   props: {
     title: {
       type: String,
-      default() {
+      default () {
         return ''
       }
     },
     bodyClass: {
       type: String,
-      default() {
+      default () {
         return ''
       }
     },
     bodyStyle: {
       type: Object,
-      default() {
+      default () {
         return {}
       }
     }
   },
-  data() {
+  data () {
     return {
       isShowBody: true
     }
   },
   methods: {
-    _toogleShowBody() {
+    _toogleShowBody () {
       this.isShowBody = !this.isShowBody
     }
   }

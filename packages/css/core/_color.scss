@@ -3,20 +3,20 @@ $colors: (
   white: #fff,
   black: #000,
   primary: #027be3,
-  secondary: #26A69A,
+  secondary: #26a69a,
   tertiary: #555,
-  positive: #21BA45,
-  negative: #DB2828,
-  info: #31CCEC,
-  warning: #F2C037,
+  positive: #21ba45,
+  negative: #db2828,
+  info: #31ccec,
+  warning: #f2c037,
   light: #bdbdbd,
   dark: #424242,
   faded: #777,
   form-light: #a7a7a7,
   form-dark: #979797,
   form-autofill: #ff9800,
-  dimmed-background: rgba(0, 0, 0, .4),
-  light-dimmed-background: rgba(255, 255, 255, .6),
+  dimmed-background: rgba(0, 0, 0, 0.4),
+  light-dimmed-background: rgba(255, 255, 255, 0.6),
   red: #f44336,
   red-1: #ffebee,
   red-2: #ffcdd2,
@@ -301,30 +301,31 @@ $colors: (
   blue-grey-11: #cfd8dc,
   blue-grey-12: #b0bec5,
   blue-grey-13: #78909c,
-  blue-grey-14: #455a64,
+  blue-grey-14: #455a64
 );
 
 :root {
-  --color-primary: #027be3;
-  --color-secondary: #26A69A;
+  --color-primary: #31ccec;
+  --color-secondary: #26a69a;
   --color-tertiary: #000;
-  --color-positive: #21BA45;
-  --color-negative: #DB2828;
-  --color-info : #31CCEC;
-  --color-warning: #F2C037;
-  --color-light: #bdbdbd;
-  --color-faded: #424242;
+  --color-positive: #21ba45;
+  --color-error: #ed4014;
+  // --color-info: #31ccec;
+  --color-success: #67c23a;
+  --color-warning: #f2c037;
+  --color-light: #dcdfe6;
+  --color-faded: #606266;
   --color-dark: #777;
-};
+}
 
 @each $type, $color in $colors {
   .text-#{$type} {
     color: $color;
-  };
+  }
   .bg-#{$type} {
-    background-color: $color
+    background-color: $color;
   }
   .border-#{$type} {
-    border-color: $color
+    border-color: $color;
   }
 }

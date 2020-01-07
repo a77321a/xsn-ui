@@ -1,10 +1,11 @@
 @import "./core/flex";
 @import "./core/position";
 @import "./core/spacing";
-@import "./core/color";
+@import "./core/_color";
 @import "./core/align";
 @import "./core/form";
 
+@import "./comp//button";
 * {
   box-sizing: border-box;
 }
@@ -120,155 +121,6 @@ label {
 }
 .text-bold {
   font-weight: 600 !important;
-}
-
-.x-btn {
-  cursor: pointer;
-  font-size: 14px;
-  position: relative;
-  outline: none;
-  border: 1px solid #dcdfe6;
-  border-radius: 4px;
-  padding: 8px 15px;
-  text-align: center;
-  overflow: hidden;
-  color: #606266;
-  transition: all 0.2s;
-  & + & {
-    margin-left: 10px;
-  }
-  &:hover,
-  &:focus {
-    opacity: 0.75;
-    transition: all 0.2s;
-  }
-  &:active {
-    transition: all 0.2s;
-    opacity: 0.95;
-  }
-}
-.x-btn--small {
-  font-size: 9px;
-}
-.x-btn--medium {
-  font-size: 14px;
-}
-.x-btn--large {
-  font-size: 16px;
-}
-.x-btn--default {
-  color: #515a6e;
-  background-color: #fff;
-  border-color: #dcdee2;
-  &:hover,
-  &:focus {
-    border-color: #2db7f5;
-    color: #2db7f5;
-  }
-}
-.x-btn--success {
-  color: #fff;
-  background-color: #67c23a;
-  border-color: #67c23a;
-}
-.x-btn--error {
-  color: #fff;
-  background-color: #ed4014;
-  border-color: #ed4014;
-}
-.x-btn.is-round {
-  border-radius: 20px;
-}
-.x-btn--primary {
-  color: #fff;
-  background-color: #2db7f5;
-  border-color: #2db7f5;
-}
-.x-btn--text {
-  color: #2db7f5;
-  background-color: transparent;
-  border: none;
-  padding-left: 0;
-  padding-right: 0;
-  &:hover {
-    cursor: default;
-    background-color: transparent;
-  }
-  & > span {
-    cursor: pointer;
-  }
-}
-.x-btn.is-long {
-  width: 100%;
-}
-.x-btn.is-loading {
-  position: relative;
-  pointer-events: none;
-  border: none;
-  &:before {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    left: -1px;
-    top: -1px;
-    right: -1px;
-    bottom: -1px;
-    border-radius: inherit;
-    background-color: rgba(255, 255, 255, 0.35);
-  }
-}
-.x-btn.is-disabled {
-  // position: relative;
-  // pointer-events: none;
-  border: none;
-  // cursor: not-allowed;
-  &:hover {
-    opacity: 1;
-    transition: none;
-  }
-  &:before {
-    cursor: not-allowed;
-    content: "";
-    position: absolute;
-    left: -1px;
-    top: -1px;
-    right: -1px;
-    bottom: -1px;
-    border-radius: inherit;
-    background-color: rgba(255, 255, 255, 0.35);
-  }
-  cursor: not-allowed;
-  background-image: none;
-}
-.x-btn.is-circle {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  font-size: 16px;
-  border-radius: 50%;
-}
-.x-btn:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  //设置径向渐变
-  // background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
-  // background-repeat: no-repeat;
-  // background-position: 0% 0%;
-  // transform: scale(10, 10);
-  // opacity: 0;
-  // transition: transform 0.5s, opacity 0.5s;
-}
-
-.x-btn:active:after {
-  opacity: 0.3;
-  //设置初始状态
-  transition: 0.1s;
 }
 
 // z-index
@@ -458,11 +310,11 @@ label {
   }
 }
 
-.f-card {
+.x-card {
   border-radius: 4px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
-  .f-card-body {
+  .x-card-body {
     min-height: 100px;
     max-height: 65vh;
     max-width: 100vw;
@@ -610,8 +462,7 @@ label {
 
 .x-breadcrumb {
   width: 100%;
-  font-size: 12px;
-
+  font-size: 14px;
   .active {
     color: #000000;
     pointer-events: none;

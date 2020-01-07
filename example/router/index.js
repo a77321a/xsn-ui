@@ -122,6 +122,11 @@ export default new Router({
       path: '/progress',
       name: 'progress',
       component: () => import('@/pages/progress/index')
+    },
+    {
+      path: '/card',
+      name: 'card',
+      component: () => import('@/pages/card/index')
     }
   ]
 })

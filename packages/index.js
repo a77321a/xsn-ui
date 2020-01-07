@@ -15,7 +15,7 @@ import XIcon from './components/icon/index'
 import FModal from './components/modal/index'
 import FTable from './components/table/index'
 import FPopover from './components/popover/index'
-import FCard from './components/card/index'
+import XCard from './components/card/index'
 import XBreadcrumb from './components/breadcrumb/index'
 import FCarousel from './components/carousel/index'
 import FCarouselItem from './components/carousel/item'
@@ -40,7 +40,7 @@ const components = [
   FModal,
   FTable,
   FPopover,
-  FCard,
+  XCard,
   XBreadcrumb,
   FField,
   FCarousel,
@@ -81,7 +81,7 @@ export default {
   FModal,
   FTable,
   FPopover,
-  FCard,
+  XCard,
   Loading,
   CloseOverlay,
   FNotify,

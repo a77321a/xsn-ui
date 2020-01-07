@@ -90,7 +90,7 @@ export default [
   {
     name: '面包屑',
     path: '/breadcrumb'
-  }
+  },
   // {
   //   name: '轮播图',
   //   path: '/carousel'
@@ -99,4 +99,8 @@ export default [
   //   name: '进度条',
   //   path: '/progress'
   // }
+  {
+    name: '卡片',
+    path: '/card'
+  }
 ]
