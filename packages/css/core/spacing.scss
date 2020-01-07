@@ -1,0 +1,56 @@
+
+$directions: (
+  top: t,
+  right: r,
+  bottom: b,
+  left: l
+);
+
+$types: (
+  padding: p,
+  margin: m
+);
+
+$sizes: (
+  sm: 8px,
+  md: 16px,
+  lg: 24px
+);
+
+@each $type, $typeval in $types {
+  @each $dir, $dirval in $directions  {
+    @each $size, $sizeval in $sizes {
+      .#{$typeval}#{$dirval}-#{$size} {
+        #{$type}-#{$dir}: $sizeval
+      }
+    }
+  }
+}
+
+.pa-sm {
+  padding: 4px 8px
+}
+.ma-sm {
+  margin: 4px 8px
+}
+.pa-md {
+  padding: 16px
+}
+.ma-md {
+  margin: 16px
+}
+.pa-lg {
+  padding: 32px
+}
+.ma-lg {
+  margin: 32px
+}
+
+
+
+.no-padding {
+  padding: 0!important
+}
+.no-margin {
+  margin : 0!important
+}
