@@ -1,3 +1,10 @@
+<!--
+ * @Descripttion: 通知
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-08 14:15:48
+ -->
 <template>
   <div>
     <a
@@ -5,21 +12,17 @@
       target="_blank"
     >样例源码</a>
     <h6>基本用法:</h6>
-    <x-btn label="info" bgcolor="info" size="md" @click="_click('info')" />
-
-    <x-btn label="warning" bgcolor="warning" size="md" @click="_click('warning')" />
-
-    <x-btn label="error" bgcolor="negative" size="md" @click="_click('error')" />
-
-    <x-btn label="success" bgcolor="positive" size="md" @click="_click('success')" />
-
+    <x-btn type="info" @click="_click('info')">信息</x-btn>
+    <x-btn type="warning" @click="_click('warning')">警告</x-btn>
+    <x-btn type="error" @click="_click('error')">失败</x-btn>
+    <x-btn type="success" @click="_click('success')">成功</x-btn>
     <!--  -->
     <x-table
-    class="mt-md"
-    title="配置项详解"
-    hide-bottom
-    :tableData="config.settingConfig.tableData"
-    :columns="config.settingConfig.columns"
+      class="mt-md"
+      title="配置项详解"
+      hide-bottom
+      :tableData="config.settingConfig.tableData"
+      :columns="config.settingConfig.columns"
     />
   </div>
 </template>
@@ -28,13 +31,13 @@
 import config from './config'
 export default {
   name: 'pageNotify',
-  data() {
+  data () {
     return {
       config
     }
   },
   methods: {
-    _click(type) {
+    _click (type) {
       this.$notify[type](type + ' notify')
     }
   }

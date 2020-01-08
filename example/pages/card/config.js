@@ -1,3 +1,10 @@
+/*
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors:
+ * @LastEditTime: 2020-01-08 10:50:23
+ */
 export default {
   settingConfig: {
     tableData: [
@@ -10,6 +17,11 @@ export default {
         props: 'body-style',
         type: 'Object',
         settings: 'body部分的style'
+      },
+      {
+        props: 'drop',
+        type: 'Boolean',
+        settings: '是否展示展开按钮'
       }
     ],
     columns: [
@@ -34,9 +46,10 @@ export default {
         arg: 'body部分的内容'
       },
       {
-        name: 'top-right',
+        name: 'right',
         arg: '头部最右侧的插槽'
       }
+
     ],
     columns: [
       {

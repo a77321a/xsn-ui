@@ -1,0 +1,17 @@
+.x-breadcrumb {
+  width: 100%;
+  font-size: 14px;
+  a {
+    color: #000000;
+    font-weight: 600;
+    transition: color 0.2s;
+    &:hover {
+      color: var(--color-primary);
+      transition: color 0.2s;
+    }
+  }
+  .active {
+    color: #666;
+    pointer-events: none;
+  }
+}

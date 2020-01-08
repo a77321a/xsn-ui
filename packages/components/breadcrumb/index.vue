@@ -3,7 +3,7 @@
  * @Author: 辛顺宁
  * @Date: 2019-12-29 17:02:27
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2019-12-29 17:32:36
+ * @LastEditTime : 2020-01-08 13:57:19
  -->
 <template>
   <div class="x-breadcrumb">
@@ -11,12 +11,13 @@
       <router-link
         :key="'x_breadcrumb_link' + idx"
         :to="{
+          name:opt.name,
           path: opt.path,
           query: opt.query,
           param: opt.param
         }"
         :replace="replace"
-        :class="opt.path === $route.path ? 'active' : ''"
+        :class="opt.name === $route.name ? 'active' : ''"
       >
         <x-icon v-if="opt.icon" :name="opt.icon" style="color: inherit; font-size: inherit" />
         {{opt.label}}

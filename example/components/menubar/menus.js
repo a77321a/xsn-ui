@@ -79,10 +79,10 @@ export default [
     name: '指令',
     path: '/directives'
   },
-  // {
-  //   name: '消息提醒',
-  //   path: '/notify'
-  // },
+  {
+    name: '消息提醒',
+    path: '/notify'
+  },
   // {
   //   name: '卡片',
   //   path: '/card'

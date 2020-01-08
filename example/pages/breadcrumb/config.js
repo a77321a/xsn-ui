@@ -1,16 +1,23 @@
+/*
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-08 13:58:51
+ */
 export default {
   options: [
     {
       icon: 'home',
-      path: '/',
+      name: 'home',
       label: '主页'
     },
     {
-      path: '/css',
+      name: 'css',
       label: '样式表'
     },
     {
-      path: '/breadcrumb',
+      name: 'breadcrumb',
       label: '面包屑'
     }
   ],

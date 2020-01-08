@@ -1,6 +1,13 @@
+<!--
+ * @Descripttion: 通知
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors:
+ * @LastEditTime: 2020-01-08 10:42:59
+ -->
 <template>
   <transition name="fade">
-    <div class="f-notify" :class="type" v-show="show">
+    <div class="x-notify" :class="type" v-show="show">
       <x-icon v-if="icon" :name="icon" size="14px" />
       {{msg}}
     </div>
@@ -9,24 +16,24 @@
 
 <script>
 export default {
-  name: 'FNotify',
+  name: 'XNotify',
   props: {
     type: {
       type: String,
-      default() {
+      default () {
         return ''
       }
     },
     icon: {
       type: String,
-      default() {
+      default () {
         return ''
       }
     },
     msg: {
       type: String,
       required: true,
-      default() {
+      default () {
         return ''
       }
     },

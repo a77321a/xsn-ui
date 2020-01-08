@@ -1,0 +1,28 @@
+.x-notify {
+  position: fixed;
+  top: 40px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: var(--q-warning);
+  font-size: 14px;
+  line-height: 1.4rem;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  &.info {
+    background-color: var(--color-info);
+  }
+  &.success {
+    background-color: var(--color-success);
+  }
+  &.error {
+    background-color: var(--color-error);
+  }
+  &.warning {
+    background-color: var(--color-warning);
+  }
+}

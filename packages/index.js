@@ -24,7 +24,7 @@ import FDatepicker from './components/datepicker/index'
 import FTips from './components/tips/index'
 import FTree from './components/tree/index'
 
-import FNotify from './components/notify/index.js'
+import XNotify from './components/notify/index.js'
 import Loading from './directives/loading/index'
 import CloseOverlay from './directives/closeoverlay/index'
 
@@ -58,7 +58,7 @@ const install = function (Vue) {
 
   Vue.use(Loading)
   Vue.use(CloseOverlay)
-  Vue.use(FNotify)
+  Vue.use(XNotify)
 
   Vue.prototype.$f = {
     platform: platform
@@ -84,7 +84,7 @@ export default {
   XCard,
   Loading,
   CloseOverlay,
-  FNotify,
+  XNotify,
   XBreadcrumb,
   FField,
   FCarousel,

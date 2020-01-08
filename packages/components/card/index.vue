@@ -3,18 +3,20 @@
  * @Author:
  * @Date: 2020-01-06 09:56:08
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2020-01-07 17:44:04
+ * @LastEditTime : 2020-01-08 10:29:23
  -->
 <template>
   <div class="x-card">
-    <div class="toolbar">
-      <div class="toolbar-title">{{title}}</div>
-      <slot name="right"></slot>
+    <div v-if="$slots.header || header" class="x-card-head">
+      <div>
+        <slot name="header">{{ header }}</slot>
+      </div>
+      <slot v-if="$slots.header || header" name="right"></slot>
       <x-btn
+        v-if="($slots.header || header) && showToggle"
         size="small"
         :icon="isShowBody ? 'arrowTop-fill' : 'arrowBottom'"
         circle
-        class="ml-sm"
         @click="_toogleShowBody"
       />
     </div>
@@ -28,12 +30,7 @@
 export default {
   name: 'XCard',
   props: {
-    title: {
-      type: String,
-      default () {
-        return ''
-      }
-    },
+    header: {},
     bodyClass: {
       type: String,
       default () {
@@ -45,11 +42,22 @@ export default {
       default () {
         return {}
       }
+    },
+    drop: {
+      type: Boolean,
+      default () {
+        return true
+      }
     }
   },
   data () {
     return {
       isShowBody: true
+    }
+  },
+  computed: {
+    showToggle () {
+      return this.drop
     }
   },
   methods: {

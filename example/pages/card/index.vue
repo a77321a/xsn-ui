@@ -1,9 +1,9 @@
 <!--
- * @Descripttion: 
- * @Author: 
+ * @Descripttion:
+ * @Author:
  * @Date: 2020-01-06 09:56:08
- * @LastEditors: 
- * @LastEditTime: 2020-01-07 17:40:32
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-08 14:12:44
  -->
 <template>
   <div>
@@ -12,14 +12,26 @@
       target="_blank"
     >样例源码</a>
 
-    <h6>基本用法:</h6>
+    <h3>基本用法:</h3>
     <div>
-      <x-card title="card title">
-        <x-btn slot="right" type="primary" @click="_click">操作</x-btn>
+      <x-card header="卡片标题">
+        <x-btn slot="right" type="text" @click="_click">操作</x-btn>
         <p>这里是body部分插槽的内容</p>
       </x-card>
     </div>
-
+    <h3>无标题卡片:</h3>
+    <div>
+      <x-card>
+        <p>这里是body部分插槽的内容</p>
+      </x-card>
+    </div>
+    <h3>无展开卡片:</h3>
+    <div>
+      <x-card header="卡片标题" :drop="false">
+        <x-btn slot="right" type="text" @click="_click">操作</x-btn>
+        <p>这里是body部分插槽的内容</p>
+      </x-card>
+    </div>
     <!--  -->
     <x-table
       class="mt-md"
@@ -51,7 +63,7 @@ export default {
   },
   methods: {
     _click() {
-      this.$notify.info('click success')
+      this.$notify.success('click success')
     }
   }
 }
