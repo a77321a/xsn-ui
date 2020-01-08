@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 处理
+ * @Author:
+ * @Date: 2020-01-06 09:56:08
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-08 16:53:52
+ */
 import Notify from './notify.vue'
 
 const XNotify = {
@@ -8,18 +15,19 @@ const XNotify = {
     Vue.component('Notify', Notify)
 
     function init (args) {
-
       // 清除已有提醒
-      const exsitNotify = document.getElementsByClassName('f-notify')
+      const exsitNotify = document.getElementsByClassName('x-notify')
+      let top = 40
       if (exsitNotify.length > 0) {
         for (let i = exsitNotify.length - 1; i >= 0; i--) {
-          exsitNotify[i].remove()
+          top += Number((window.getComputedStyle(exsitNotify[i]).height).replace('px', '')) + 10
         }
       }
 
       let VueXNotify = Vue.extend({
         render (h) {
           let props = {
+            top: top,
             type: args.type,
             msg: args.msg,
             show: this.show,
@@ -37,23 +45,28 @@ const XNotify = {
       let vm = newNotify.$mount()
       let el = vm.$el
       document.body.appendChild(el)
-
       vm.show = true
-
       let timeout = setTimeout(() => {
         clearTimeout(timeout)
         vm.show = false
         if (document.body.contains(el)) {
           document.body.removeChild(el)
           newNotify.$destroy()
+          let isExsitNotify = document.getElementsByClassName('x-notify')
+          let top = 40
+          if (isExsitNotify.length > 0) {
+            for (let i = 0; i < isExsitNotify.length; i++) {
+              isExsitNotify[i].style.transition = 'all .2s'
+              isExsitNotify[i].style.top = top + 'px'
+              top += Number((window.getComputedStyle(isExsitNotify[i]).height).replace('px', '')) + 10
+            }
+          }
         }
-
         vm = null
 
         args.callback && (typeof args.callback === 'function') && args.callback()
-      }, args.duration ? args.duration : '2000')
+      }, args.duration ? args.duration : '3000')
     }
-
     Vue.prototype.$notify = {
       info (msg) {
         if (!msg) return

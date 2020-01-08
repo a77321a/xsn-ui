@@ -2,12 +2,12 @@
  * @Descripttion: 通知
  * @Author:
  * @Date: 2020-01-06 09:56:08
- * @LastEditors:
- * @LastEditTime: 2020-01-08 10:42:59
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-01-08 15:45:16
  -->
 <template>
   <transition name="fade">
-    <div class="x-notify" :class="type" v-show="show">
+    <div :style="positionStyle" class="x-notify" :class="type" v-show="show">
       <x-icon v-if="icon" :name="icon" size="14px" />
       {{msg}}
     </div>
@@ -22,6 +22,12 @@ export default {
       type: String,
       default () {
         return ''
+      }
+    },
+    top: {
+      type: Number,
+      default () {
+        return 40
       }
     },
     icon: {
@@ -40,6 +46,13 @@ export default {
     show: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    positionStyle () {
+      return {
+        top: `${this.top}px`
+      }
     }
   }
 }
