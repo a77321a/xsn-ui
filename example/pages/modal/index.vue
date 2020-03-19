@@ -9,12 +9,11 @@
     <h6>
       基本用法(v-model控制开关):
     </h6>
-
-    <x-btn label="点击弹窗" @click="show.middle = true" />
-    <x-btn label="左侧弹窗" @click="show.left = true" />
-    <x-btn label="右侧弹窗" @click="show.right = true" />
-    <x-btn label="顶部弹窗" @click="show.top = true" />
-    <x-btn label="底部弹窗" @click="show.bottom = true" />
+    <x-btn @click="show.middle = true">点击弹窗</x-btn>
+    <x-btn @click="show.left = true">左侧弹窗</x-btn>
+    <x-btn @click="show.right = true">右侧弹窗</x-btn>
+    <x-btn @click="show.top = true">顶部弹窗</x-btn>
+    <x-btn @click="show.bottom = true">底部弹窗</x-btn>
     <x-modal v-model="show.middle" title="title">
       <template slot="body">
         <div class="text-center pt-lg">
@@ -23,7 +22,9 @@
       </template>
       <template slot="footer">
         <div class="text-right full-width">
-          <x-btn icon="save" label="保存" bg-color="positive" />
+          <x-btn @click="show.middle = false" type="primary" icon="save"
+            >保存</x-btn
+          >
         </div>
       </template>
     </x-modal>

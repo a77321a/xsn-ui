@@ -1,0 +1,42 @@
+// 输入框样式
+.no-icon-checked {
+  color: var(--color-primary);
+}
+.x-input {
+  padding: 3px 5px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  position: relative;
+  width: 180px;
+  transition: all 0.3s ease;
+  &.hover {
+    border-color: var(--color-primary);
+  }
+  input,
+  textarea {
+    outline: none;
+    border: none;
+    font-size: inherit;
+    width: 100%;
+    min-height: 25px;
+    width: 100%;
+    color: inherit;
+  }
+  textarea {
+    resize: vertical;
+  }
+  input:disabled,
+  textarea:disabled {
+    background-color: transparent;
+    color: inherit;
+  }
+  input::-webkit-outer-spin-button,
+  textarea::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

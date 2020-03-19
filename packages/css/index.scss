@@ -3,12 +3,14 @@
 @import "./core/_spacing";
 @import "./core/_color";
 @import "./core/_align";
-@import "./core/_form";
 
 @import "./comp/_button";
 @import "./comp/_card";
 @import "./comp/_notify";
 @import "./comp/_breadcrumb";
+@import "./comp/_input";
+@import "./comp/_select";
+@import "./comp/_datepicker";
 
 * {
   box-sizing: border-box;

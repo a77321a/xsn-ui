@@ -1,0 +1,39 @@
+// 日期选择器
+.x-datepicker {
+  width: 180px;
+  .x-date-picker {
+    width: 210px;
+    .x-date-picker-header,
+    .x-date-picker-body {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .x-date-picker-header {
+      padding-bottom: 5px;
+    }
+    .x-date-picker-body {
+      .x-date-picker-cell {
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+          background-color: var(--color-primary);
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    .x-date-picker-cell {
+      line-height: 30px;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      font-size: 12px;
+      transition: all ease 0.3s;
+      border-radius: 50%;
+    }
+  }
+}

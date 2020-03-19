@@ -73,6 +73,9 @@
   &.is-round {
     border-radius: 20px;
   }
+  &.no-border {
+    border: none;
+  }
   &.x-btn--primary {
     color: #fff;
     background-color: var(--color-primary);

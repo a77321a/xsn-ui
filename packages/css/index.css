@@ -4148,159 +4148,6 @@
   text-align-last: justify;
 }
 
-.x-input {
-  padding: 3px 5px;
-  display: inline-block;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  position: relative;
-  width: 180px;
-  transition: all 0.3s ease;
-}
-
-.x-input.hover {
-  border-color: var(--color-primary);
-}
-
-.x-input input,
-.x-input textarea {
-  outline: none;
-  border: none;
-  font-size: inherit;
-  width: 100%;
-  min-height: 25px;
-  width: 100%;
-  color: inherit;
-}
-
-.x-input textarea {
-  resize: vertical;
-}
-
-.x-input input:disabled,
-.x-input textarea:disabled {
-  background-color: transparent;
-  color: inherit;
-}
-
-.x-input input::-webkit-outer-spin-button,
-.x-input textarea::-webkit-outer-spin-button,
-.x-input input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.x-input input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-.x-select {
-  display: inline-block;
-  width: 180px;
-  cursor: pointer;
-}
-
-.x-select input {
-  cursor: pointer;
-}
-
-.x-select .selected-tip {
-  display: inline-block;
-  border: 1px solid #f3f3f3;
-  border-radius: 10px;
-  padding: 3px 5px;
-  margin: 0 2px;
-  cursor: pointer;
-  max-width: 100px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.x-select .selected-tip:hover {
-  background-color: var(--color-primary);
-  color: #fff;
-}
-
-.x-select .select-popover {
-  max-height: 200px;
-  overflow: auto;
-}
-
-.x-select ul {
-  padding: 5px 0;
-}
-
-.x-select ul li {
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 12px;
-}
-
-.x-select ul li:hover {
-  background-color: #f0f0f0;
-}
-
-.form-group {
-  display: inline-block;
-}
-
-.error > * {
-  border-color: red !important;
-  color: red;
-}
-
-.required {
-  color: red;
-  position: absolute;
-  padding-left: 4px;
-  display: inline-block;
-}
-
-.no-icon-checked {
-  color: var(--color-primary);
-}
-
-.x-datepicker {
-  width: 180px;
-}
-
-.x-datepicker .x-date-picker {
-  width: 210px;
-}
-
-.x-datepicker .x-date-picker .x-date-picker-header,
-.x-datepicker .x-date-picker .x-date-picker-body {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.x-datepicker .x-date-picker .x-date-picker-header {
-  padding-bottom: 5px;
-}
-
-.x-datepicker .x-date-picker .x-date-picker-body .x-date-picker-cell {
-  cursor: pointer;
-}
-
-.x-datepicker .x-date-picker .x-date-picker-body .x-date-picker-cell:hover, .x-datepicker .x-date-picker .x-date-picker-body .x-date-picker-cell.active {
-  background-color: var(--color-primary);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.x-datepicker .x-date-picker .x-date-picker-cell {
-  line-height: 30px;
-  height: 30px;
-  width: 30px;
-  text-align: center;
-  font-size: 12px;
-  transition: all ease 0.3s;
-  border-radius: 50%;
-}
-
 .x-btn {
   cursor: pointer;
   font-size: 14px;
@@ -4378,6 +4225,10 @@
 
 .x-btn.is-round {
   border-radius: 20px;
+}
+
+.x-btn.no-border {
+  border: none;
 }
 
 .x-btn.x-btn--primary {
@@ -4563,6 +4414,143 @@
 .x-breadcrumb .active {
   color: #666;
   pointer-events: none;
+}
+
+.no-icon-checked {
+  color: var(--color-primary);
+}
+
+.x-input {
+  padding: 3px 5px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  position: relative;
+  width: 180px;
+  transition: all 0.3s ease;
+}
+
+.x-input.hover {
+  border-color: var(--color-primary);
+}
+
+.x-input input,
+.x-input textarea {
+  outline: none;
+  border: none;
+  font-size: inherit;
+  width: 100%;
+  min-height: 25px;
+  width: 100%;
+  color: inherit;
+}
+
+.x-input textarea {
+  resize: vertical;
+}
+
+.x-input input:disabled,
+.x-input textarea:disabled {
+  background-color: transparent;
+  color: inherit;
+}
+
+.x-input input::-webkit-outer-spin-button,
+.x-input textarea::-webkit-outer-spin-button,
+.x-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.x-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.x-select {
+  display: inline-block;
+  width: 180px;
+  cursor: pointer;
+}
+
+.x-select input {
+  cursor: pointer;
+}
+
+.x-select .selected-tip {
+  display: inline-block;
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  padding: 3px 5px;
+  margin: 0 2px;
+  cursor: pointer;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.x-select .selected-tip:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.x-select .select-popover {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.x-select ul {
+  padding: 5px 0;
+}
+
+.x-select ul li {
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.x-select ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.x-datepicker {
+  width: 180px;
+}
+
+.x-datepicker .x-date-picker {
+  width: 210px;
+}
+
+.x-datepicker .x-date-picker .x-date-picker-header,
+.x-datepicker .x-date-picker .x-date-picker-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.x-datepicker .x-date-picker .x-date-picker-header {
+  padding-bottom: 5px;
+}
+
+.x-datepicker .x-date-picker .x-date-picker-body .x-date-picker-cell {
+  cursor: pointer;
+}
+
+.x-datepicker .x-date-picker .x-date-picker-body .x-date-picker-cell:hover, .x-datepicker .x-date-picker .x-date-picker-body .x-date-picker-cell.active {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.x-datepicker .x-date-picker .x-date-picker-cell {
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-size: 12px;
+  transition: all ease 0.3s;
+  border-radius: 50%;
 }
 
 * {

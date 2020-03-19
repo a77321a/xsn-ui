@@ -10,7 +10,8 @@
     <a
       href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/btn/index.vue"
       target="_blank"
-    >样例源码</a>
+      >样例源码</a
+    >
     <h4>不同尺寸:</h4>
     <p>Button组件提供三种尺寸，可以在不同场景下选择合适的按钮尺寸。</p>
     <x-btn type="primary" size="small" @click="_click">小型按钮</x-btn>
@@ -30,7 +31,9 @@
     <h4>禁用</h4>
     <x-btn size="medium" type="primary" disabled>禁用按钮</x-btn>
     <h4>加载</h4>
-    <x-btn label="loading" type="primary" size="medium" :loading="true">加载中</x-btn>
+    <x-btn label="loading" type="primary" size="medium" :loading="true"
+      >加载中</x-btn
+    >
     <!--  -->
     <x-table
       class="mt-md"
@@ -52,7 +55,7 @@
 </template>
 
 <script>
-import config from './config'
+import config from './config';
 export default {
   name: 'pageBtn',
   data () {

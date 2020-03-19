@@ -18,9 +18,10 @@
         'is-loading': loading,
         'is-round': round,
         'is-circle': circle,
-        'is-long': long
+        'is-long': long,
+        'no-border': noBorder
       }
-      ]"
+    ]"
     @click.stop="handleClick"
     v-loading="loading"
   >
@@ -36,6 +37,12 @@ export default {
   name: 'XBtn',
   props: {
     long: Boolean,
+    noBorder: {
+      type: Boolean,
+      default () {
+        return false
+      }
+    },
     size: {
       type: String
       // default () {
@@ -44,58 +51,58 @@ export default {
     },
     label: {
       type: String,
-      default() {
-        return ''
+      default () {
+        return '';
       }
     },
     type: {
       type: String,
-      default() {
-        return 'default'
+      default () {
+        return 'default';
       }
     },
     textColor: {
       type: String,
-      default() {
-        return 'white'
+      default () {
+        return 'white';
       }
     },
     round: {
       type: Boolean,
-      default() {
+      default () {
         return false
       }
     },
     loading: {
       type: Boolean,
-      default() {
+      default () {
         return false
       }
     },
     circle: Boolean,
     icon: {
       type: String,
-      default() {
-        return ''
+      default () {
+        return '';
       }
     },
     disabled: {
       type: Boolean,
-      default() {
+      default () {
         return false
       }
     }
   },
   computed: {
-    buttonSize() {
+    buttonSize () {
       return this.size
     },
-    buttonDisabled() {
+    buttonDisabled () {
       return this.disabled
     }
   },
   methods: {
-    handleClick(evt) {
+    handleClick (evt) {
       this.$emit('click', evt)
     }
   }

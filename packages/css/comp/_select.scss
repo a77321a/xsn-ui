@@ -1,0 +1,41 @@
+// 下拉选择样式
+.x-select {
+  display: inline-block;
+  width: 180px;
+  cursor: pointer;
+
+  input {
+    cursor: pointer;
+  }
+  .selected-tip {
+    display: inline-block;
+    border: 1px solid #f3f3f3;
+    border-radius: 10px;
+    padding: 3px 5px;
+    margin: 0 2px;
+    cursor: pointer;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+      background-color: var(--color-primary);
+      color: #fff;
+    }
+  }
+  .select-popover {
+    max-height: 200px;
+    overflow: auto;
+  }
+  ul {
+    padding: 5px 0;
+    li {
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
