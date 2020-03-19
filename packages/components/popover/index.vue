@@ -1,3 +1,10 @@
+<!--
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-03-19 09:40:00
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-03-19 14:28:04
+ -->
 <template>
   <div class="x-popover" v-close-overlay>
     <slot></slot>
@@ -23,13 +30,11 @@ export default {
         parent.style.position = 'relative';
       }
 
-      let _self = this
-      const handler = function () {
-        _self.toggle()
-        _self.$el.style.top = parent.offsetHeight + 'px';
+      const handler = _ => {
+        this.toggle()
+        this.$el.style.top = parent.offsetHeight + 'px';
       }
-      _self._handler = handler
-
+      this._handler = handler
       parent.addEventListener('click', handler)
 
       const resizeHandler = () => {

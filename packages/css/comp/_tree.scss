@@ -1,0 +1,19 @@
+// 树形组件样式
+.x-tree {
+  color: #777;
+  .x-tree-node {
+    cursor: pointer;
+    .x-tree-node-content {
+      height: 30px;
+      line-height: 30px;
+      border-radius: 5px;
+      padding: 0 10px;
+      &:hover {
+        background-color: #f4f4f4;
+      }
+      &.active {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

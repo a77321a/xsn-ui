@@ -38,7 +38,7 @@
           name="close"
           size="12px"
           @click="_clear"
-          class="round-icon"
+          circle
         />
         <x-icon
           v-if="after"

@@ -37,3 +37,23 @@
     }
   }
 }
+// bar样式
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  overflow: hidden;
+  position: relative;
+  justify-content: space-around;
+  min-height: 35px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.toolbar-title {
+  padding: 10px;
+  flex: 1;
+  min-width: 1px;
+  max-width: 100%;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+}

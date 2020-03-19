@@ -1,6 +1,16 @@
+<!--
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-03-19 09:40:00
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-03-19 14:24:57
+ -->
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/popover/index.vue" target="_blank">
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/popover/index.vue"
+      target="_blank"
+    >
       样例源码
     </a>
     <h6>
@@ -8,18 +18,17 @@
     </h6>
     <p>
       可以通过v-model控制开关
-      <br>
+      <br />
       宽度默认是父元素的宽度。
-      <br>
+      <br />
       点击父元素自动显示隐藏，点击其他地方直接隐藏（display: block / none）
     </p>
-
-    <div class="bg-primary pa-sm border-radius mt-md" style="width: 100px">
-      <span class="inline-block full-width text-white font-normal text-center cursor-pointer">点击弹出</span>
-      <x-popover class="pa-sm font-normal">
+    <x-btn>
+      <span>点击弹出</span>
+      <x-popover class=" font-normal">
         这是弹出框popover
       </x-popover>
-    </div>
+    </x-btn>
 
     <x-table
       class="mt-md"
@@ -40,7 +49,7 @@
 </template>
 
 <script>
-import config from './config'
+import config from './config';
 export default {
   name: 'pagePopover',
   data () {
@@ -52,5 +61,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,0 +1,18 @@
+// 进度条样式
+.x-progress {
+  min-width: 150px;
+  border-radius: 5px;
+  background: #ddd;
+  position: relative;
+  min-height: 5px;
+  .x-progress-active {
+    transition: all ease 0.3s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+    height: 100%;
+  }
+  .x-progress-label {
+    font-size: 12px;
+  }
+}

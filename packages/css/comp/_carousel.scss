@@ -1,0 +1,66 @@
+// 走马灯样式
+.x-carousel {
+  width: 100%;
+  min-height: 200px;
+  min-height: 220px;
+  overflow: hidden;
+  position: relative;
+  .x-carousel-prev {
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 12px);
+  }
+  .x-carousel-next {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 12px);
+  }
+  .left-icon,
+  .right-icon {
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgba(189, 189, 189, 0.6);
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: rgba(189, 189, 189, 1);
+    }
+  }
+  .x-carousel-controls {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 20px;
+    background-color: rgba(189, 189, 189, 0.6);
+    .x-carousel-controls-item {
+      color: #fff;
+      opacity: 0.5;
+      font-size: 14px;
+      padding: 5px;
+      height: 100%;
+      margin: 0 3px;
+      cursor: pointer;
+      display: inline-block;
+      transition: all ease 0.3s;
+      &.active,
+      &:hover {
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+      }
+    }
+  }
+  .x-carousel-item-caontainer {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+  }
+  .x-carousel-item {
+    flex: 0 0 100%;
+    position: relative;
+  }
+}
