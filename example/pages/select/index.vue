@@ -1,19 +1,19 @@
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/select/index.vue" target="_blank">
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/select/index.vue"
+      target="_blank"
+    >
       样例源码
     </a>
     <h6>
       基本用法:
     </h6>
-    <f-select
-      v-model="selection"
-      :options="config.options"
-    />
+    <x-select v-model="selection" :options="config.options" />
     <h6>
       underline:
     </h6>
-    <f-select
+    <x-select
       v-model="selection"
       :options="config.options"
       border="underline"
@@ -21,16 +21,12 @@
     <h6>
       可筛选：
     </h6>
-    <f-select
-      v-model="selection"
-      :options="config.options"
-      filter
-    />
+    <x-select v-model="selection" :options="config.options" filter />
 
     <h6>
       可多选
     </h6>
-    <f-select
+    <x-select
       v-model="selections"
       :options="config.options"
       filter
@@ -41,21 +37,17 @@
     <h6>
       禁用
     </h6>
-    <f-select
-      v-model="selection"
-      disabled
-      :options="config.options"
-    />
+    <x-select v-model="selection" disabled :options="config.options" />
 
-    <h6>
+    <!-- <h6>
       自动完成
     </h6>
-    <f-select
+    <x-select
       v-model="autoVal"
       autocomplete
       :options="autoOpts"
       @search="_search"
-    />
+    /> -->
     <!--  -->
     <x-table
       class="mt-md"
@@ -77,7 +69,7 @@
 </template>
 
 <script>
-import config from './config'
+import config from './config';
 export default {
   name: 'pageFormSelect',
   data () {
@@ -115,5 +107,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

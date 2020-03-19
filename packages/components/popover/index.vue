@@ -1,15 +1,12 @@
 <template>
-  <div
-    class="f-popover"
-    v-close-overlay
-  >
+  <div class="x-popover" v-close-overlay>
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FPopover',
+  name: 'XPopover',
   props: {
     value: {
       type: Boolean,
@@ -19,14 +16,17 @@ export default {
   mounted () {
     this.$nextTick(() => {
       const parent = this.$el.parentNode
-      if (parent.style.position !== 'absolute' || parent.style.position !== 'fixed') {
-        parent.style.position = 'relative'
+      if (
+        parent.style.position !== 'absolute' ||
+        parent.style.position !== 'fixed'
+      ) {
+        parent.style.position = 'relative';
       }
 
       let _self = this
       const handler = function () {
         _self.toggle()
-        _self.$el.style.top = parent.offsetHeight + 'px'
+        _self.$el.style.top = parent.offsetHeight + 'px';
       }
       _self._handler = handler
 
@@ -34,7 +34,7 @@ export default {
 
       const resizeHandler = () => {
         this.resize()
-      }
+      };
       this._resizeHandler = resizeHandler
       window.addEventListener('resize', resizeHandler)
     })
@@ -51,30 +51,29 @@ export default {
       handler (val, oldVal) {
         this.$nextTick(() => {
           val ? this.show() : this.hide()
-
         })
       }
     }
   },
   methods: {
     show () {
-      this.$el.style.display = 'block'
+      this.$el.style.display = 'block';
       this.resize()
       this.$emit('input', true)
     },
     hide () {
-      this.$el.style.display = 'none'
+      this.$el.style.display = 'none';
       this.$emit('input', false)
     },
     toggle () {
-      this.$el.style.display = this.$el.style.display === 'block' ? this.hide() : this.show()
+      this.$el.style.display =
+        this.$el.style.display === 'block' ? this.hide() : this.show()
     },
     resize () {
-      this.$el.style.top = this.$el.parentNode.offsetHeight + 'px'
+      this.$el.style.top = this.$el.parentNode.offsetHeight + 'px';
     }
   }
 }
 </script>
 
-<style>
-</style>
+<style></style>

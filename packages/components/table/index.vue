@@ -5,18 +5,23 @@
       v-if="!$scopedSlots.top && (title || $scopedSlots['top-right'])"
       class="toolbar no-padding"
     >
-      <h5 class="no-margin no-padding text-bold toolbar-title">{{ title ? title : '' }}</h5>
+      <h5 class="no-margin no-padding text-bold toolbar-title">
+        {{ title ? title : "" }}
+      </h5>
       <div v-if="$scopedSlots['top-right']">
         <slot name="top-right" />
       </div>
     </div>
 
     <table
-      :class="[{
-      'x-table--striped': stripe,
-      'x-table--border': border,
-    }, tableSize ? `x-table--${ tableSize }` : '']"
-      class="f-table"
+      :class="[
+        {
+          'x-table--striped': stripe,
+          'x-table--border': border
+        },
+        tableSize ? `x-table--${tableSize}` : ''
+      ]"
+      class="x-table"
     >
       <thead v-if="!noHeader">
         <slot name="head" :columns="columns"></slot>
@@ -24,7 +29,13 @@
           <th
             v-for="(col, thidx) in columns"
             :key="'thead_th_' + thidx"
-            :class="[col.align ? 'text-' + col.align : 'text-left', fixed.includes('left') && thidx === 0 ? 'sticky-left' : '', fixed.includes('right') && thidx === columns.length - 1 ? 'sticky-right' : '']"
+            :class="[
+              col.align ? 'text-' + col.align : 'text-left',
+              fixed.includes('left') && thidx === 0 ? 'sticky-left' : '',
+              fixed.includes('right') && thidx === columns.length - 1
+                ? 'sticky-right'
+                : ''
+            ]"
             :style="{
               width: col.width ? col.width : 'auto'
             }"
@@ -36,8 +47,13 @@
 
       <tbody>
         <slot name="body" :row="_computedTableData" :columns="columns"></slot>
-        <template v-if="!$scopedSlots.body && _computedTableData.length > 0 && !loading">
-          <tr v-for="(tr, tridx) in _computedTableData" :key="'tbody_tr_' + tridx">
+        <template
+          v-if="!$scopedSlots.body && _computedTableData.length > 0 && !loading"
+        >
+          <tr
+            v-for="(tr, tridx) in _computedTableData"
+            :key="'tbody_tr_' + tridx"
+          >
             <td
               v-for="(col, tdidx) in columns"
               :key="'tbody_tr_' + tridx + 'thead_td_' + tdidx"
@@ -52,14 +68,19 @@
         </template>
 
         <!-- no-data -->
-        <tr v-if=" _computedTableData.length === 0 && !loading">
-          <td class="text-center no-data-container" colspan="999">{{ loading ? '' :noDataMsg }}</td>
+        <tr v-if="_computedTableData.length === 0 && !loading">
+          <td class="text-center no-data-container" colspan="999">
+            {{ loading ? "" : noDataMsg }}
+          </td>
         </tr>
       </tbody>
     </table>
-    <div v-if="!hideBottom && pagination" class="text-right pa-sm font-normal text-faded">
+    <div
+      v-if="!hideBottom && pagination"
+      class="text-right pa-sm font-normal text-faded"
+    >
       当前页：
-      <f-select
+      <x-select
         v-model="currentPage"
         :options="_computedPageOptions"
         border="underline"
@@ -67,7 +88,7 @@
         style="width: 60px"
         @input="handlePageChanged"
       />每页行数：
-      <f-select
+      <x-select
         v-model="currentRowsPerPage"
         :options="_computedRowsPerPageOptions"
         border="underline"
@@ -86,7 +107,7 @@ export default {
     size: {
       type: String,
       default () {
-        return 'medium'
+        return 'medium';
       }
     },
     stripe: Boolean,
@@ -106,7 +127,7 @@ export default {
     noDataMsg: {
       type: String,
       default () {
-        return '暂无数据'
+        return '暂无数据';
       }
     },
     fixed: {
@@ -124,7 +145,7 @@ export default {
     title: {
       type: String,
       default () {
-        return ''
+        return '';
       }
     },
     noHeader: {
@@ -219,5 +240,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

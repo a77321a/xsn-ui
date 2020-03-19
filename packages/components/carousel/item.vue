@@ -1,20 +1,17 @@
 <template>
-  <div
-    class="f-carousel-item"
-    :style="style"
-  >
+  <div class="x-carousel-item" :style="style">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FCarouselItem',
+  name: 'XCarouselItem',
   props: {
     imgSrc: {
       type: String,
       default () {
-        return ''
+        return '';
       }
     }
   },
@@ -28,10 +25,8 @@ export default {
         }
       }
     }
-  },
+  }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

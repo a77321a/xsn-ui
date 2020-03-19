@@ -1,6 +1,9 @@
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/tips/index.vue" target="_blank">
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/tips/index.vue"
+      target="_blank"
+    >
       样例源码
     </a>
 
@@ -9,13 +12,10 @@
     </h6>
 
     <span class="inline-block cursor-pointer">
-      <x-icon
-        name="warning"
-        color="warning"
-      />
-      <f-tips>
+      <x-icon name="warning" color="warning" />
+      <x-tips>
         tips message
-      </f-tips>
+      </x-tips>
     </span>
 
     <!--  -->
@@ -26,21 +26,19 @@
       :tableData="config.slotConfig.tableData"
       :columns="config.slotConfig.columns"
     />
-
   </div>
 </template>
 
 <script>
-import config from './config'
+import config from "./config";
 export default {
-  name: 'pageTips',
-  data () {
+  name: "pageTips",
+  data() {
     return {
       config
-    }
+    };
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>

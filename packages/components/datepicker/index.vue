@@ -1,6 +1,6 @@
 <template>
   <div class="x-datepicker">
-    <f-input
+    <x-input
       v-model="model"
       :placeholder="placeholder"
       :disabled="disabled"
@@ -8,22 +8,32 @@
       readonly
       :after="{
         icon: isShowPopover ? 'upward' : 'down',
-        handler () {
-          _toggleShowPopover
+        handler() {
+          _toggleShowPopover;
         }
       }"
     />
-    <f-popover v-if="!disabled" v-model="isShowPopover" style="min-width: 210px">
-      <date-picker v-model="model" @input="_emit" :min="min" :max="max" :format="format"/>
-    </f-popover>
+    <x-popover
+      v-if="!disabled"
+      v-model="isShowPopover"
+      style="min-width: 210px"
+    >
+      <date-picker
+        v-model="model"
+        @input="_emit"
+        :min="min"
+        :max="max"
+        :format="format"
+      />
+    </x-popover>
   </div>
 </template>
 
 <script>
-import DatePicker from './date'
-import {date} from '../../utils/date'
+import DatePicker from './date';
+import { date } from '../../utils/date';
 export default {
-  name: 'FDatepicker',
+  name: 'XDatepicker',
   components: {
     DatePicker
   },
@@ -31,7 +41,7 @@ export default {
     value: {
       type: String | Date,
       default () {
-        return ''
+        return '';
       }
     },
     placeholder: {
@@ -45,9 +55,11 @@ export default {
     border: {
       type: String,
       default () {
-        return 'outline'
+        return 'outline';
       },
-      validator: value => {return ['underline', 'outline'].indexOf(value) > -1}
+      validator: value => {
+        return ['underline', 'outline'].indexOf(value) > -1
+      }
     },
     min: {
       type: String,
@@ -92,6 +104,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

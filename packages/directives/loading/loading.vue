@@ -1,6 +1,6 @@
 <template>
   <div
-    class="f-loading"
+    class="x-loading"
     v-show="show"
   >
     <f-svg/>

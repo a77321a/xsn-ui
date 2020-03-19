@@ -1,4 +1,5 @@
-.form-input {
+// 输入框样式
+.x-input {
   padding: 3px 5px;
   display: inline-block;
   text-overflow: ellipsis;
@@ -6,7 +7,9 @@
   position: relative;
   width: 180px;
   transition: all 0.3s ease;
-
+  &.hover {
+    border-color: var(--color-primary);
+  }
   input,
   textarea {
     outline: none;
@@ -17,29 +20,25 @@
     width: 100%;
     color: inherit;
   }
-
   textarea {
     resize: vertical;
   }
-
   input:disabled,
   textarea:disabled {
     background-color: transparent;
     color: inherit;
   }
-
   input::-webkit-outer-spin-button,
   textarea::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-
   input[type="number"] {
     -moz-appearance: textfield;
   }
 }
-
-.form-select {
+// 下拉选择样式
+.x-select {
   display: inline-block;
   width: 180px;
   cursor: pointer;
@@ -47,7 +46,6 @@
   input {
     cursor: pointer;
   }
-
   .selected-tip {
     display: inline-block;
     border: 1px solid #f3f3f3;
@@ -58,21 +56,17 @@
     max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
-
     &:hover {
-      background-color: #1493ff;
+      background-color: var(--color-primary);
       color: #fff;
     }
   }
-
   .select-popover {
     max-height: 200px;
     overflow: auto;
   }
-
   ul {
     padding: 5px 0;
-
     li {
       cursor: pointer;
       overflow: hidden;
@@ -84,13 +78,6 @@
     }
   }
 }
-
-// .f-form {
-
-//   .form-item {
-//     // padding: 4px 8px
-//   }
-// }
 
 .form-group {
   display: inline-block;
@@ -107,13 +94,13 @@
   padding-left: 4px;
   display: inline-block;
 }
-
+.no-icon-checked {
+  color: var(--color-primary);
+}
 .x-datepicker {
   width: 180px;
-
   .x-date-picker {
     width: 210px;
-
     .x-date-picker-header,
     .x-date-picker-body {
       display: flex;
@@ -124,7 +111,6 @@
     .x-date-picker-header {
       padding-bottom: 5px;
     }
-
     .x-date-picker-body {
       .x-date-picker-cell {
         cursor: pointer;
@@ -138,7 +124,6 @@
         }
       }
     }
-
     .x-date-picker-cell {
       line-height: 30px;
       height: 30px;

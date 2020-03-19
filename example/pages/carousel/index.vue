@@ -1,34 +1,49 @@
 <template>
   <div>
-    <a href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/carousel/index.vue" target="_blank">
+    <a
+      href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/carousel/index.vue"
+      target="_blank"
+    >
       样例源码
     </a>
     <h6>
       基本用法:
     </h6>
     <div class="full-width">
-      <f-carousel height="350px">
-        <f-carousel-item>
-          <div class="text-white text-bold fit row items-center flex-center bg-negative" style="font-size: 24px">
+      <x-carousel height="350px">
+        <x-carousel-item>
+          <div
+            class="text-white text-bold fit row items-center flex-center bg-negative"
+            style="font-size: 24px"
+          >
             carousel-item-1
           </div>
-        </f-carousel-item>
-        <f-carousel-item>
-          <div class="text-white text-bold fit row items-center flex-center bg-blue" style="font-size: 24px">
+        </x-carousel-item>
+        <x-carousel-item>
+          <div
+            class="text-white text-bold fit row items-center flex-center bg-blue"
+            style="font-size: 24px"
+          >
             carousel-item-2
           </div>
-        </f-carousel-item>
-        <f-carousel-item>
-          <div class="text-white text-bold fit row items-center flex-center bg-primary" style="font-size: 24px">
+        </x-carousel-item>
+        <x-carousel-item>
+          <div
+            class="text-white text-bold fit row items-center flex-center bg-primary"
+            style="font-size: 24px"
+          >
             carousel-item-3
           </div>
-        </f-carousel-item>
-        <f-carousel-item>
-          <div class="text-white text-bold fit row items-center flex-center bg-positive" style="font-size: 24px">
+        </x-carousel-item>
+        <x-carousel-item>
+          <div
+            class="text-white text-bold fit row items-center flex-center bg-positive"
+            style="font-size: 24px"
+          >
             carousel-item-4
           </div>
-        </f-carousel-item>
-      </f-carousel>
+        </x-carousel-item>
+      </x-carousel>
     </div>
 
     <!--  -->
@@ -76,16 +91,15 @@
 </template>
 
 <script>
-import config from './config'
+import config from "./config";
 export default {
-  name: 'pageCarousel',
-  data () {
+  name: "pageCarousel",
+  data() {
     return {
       config
-    }
+    };
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,18 +1,21 @@
 <template>
   <div
-    class="form-select"
-    :class="[disabled ? 'disabled' : '', border === 'underline' ? 'border-bottom-default' : 'border-default border-radius']"
+    class="x-select"
+    :class="[
+      disabled ? 'disabled' : '',
+      border === 'underline'
+        ? 'border-bottom-default'
+        : 'border-default border-radius',
+      active ? 'hover' : ''
+    ]"
   >
-    <div
-      v-if="mutiple && selection.length > 0"
-      class="pt-sm pb-sm"
-    >
+    <div v-if="mutiple && selection.length > 0" class="pt-sm pb-sm">
       <span
         v-for="(item, idx) in mutipleSelectedLabel"
         :key="'select_selected_opt_' + idx"
         class="selected-tip relative"
       >
-        {{item}}
+        {{ item }}
         <x-icon
           name="close"
           size="12px"
@@ -21,7 +24,7 @@
         />
       </span>
     </div>
-    <f-input
+    <x-input
       ref="input"
       v-model="inputValue"
       :disabled="disabled"
@@ -35,18 +38,14 @@
       @focus="_focus"
       class="full-width no-border"
     />
-    <f-popover
-      v-if="!disabled"
-      ref="popover"
-      class="select-popover"
-    >
+    <x-popover v-if="!disabled" ref="popover" class="select-popover">
       <!-- no data msg -->
       <div
         v-if="opts.length === 0"
         class="text-center font-normal text-faded pt-md"
         style="min-height: 30px"
       >
-        {{noDataMsg}}
+        {{ noDataMsg }}
       </div>
       <ul v-if="opts.length > 0">
         <li
@@ -55,7 +54,7 @@
           @click.stop.prevent="_select(opt)"
           :class="mutiple ? 'no-padding' : 'pt-sm pb-sm pr-sm pl-sm'"
         >
-          <f-checkbox
+          <x-checkbox
             v-if="mutiple"
             v-model="selection"
             :val="opt.value"
@@ -63,23 +62,23 @@
             class="fit inline-block text-ellipsis pt-sm pb-sm pr-sm pl-sm"
           />
           <template v-else>
-            {{opt.label}}
+            {{ opt.label }}
           </template>
         </li>
       </ul>
-    </f-popover>
+    </x-popover>
   </div>
 </template>
 
 <script>
-import { debounce } from '../../utils/function'
+import { debounce } from '../../utils/function';
 export default {
-  name: 'FSelect',
+  name: 'XSelect',
   props: {
     value: {
       type: String | Array,
       default () {
-        return this.mutiple ? [] : ''
+        return this.mutiple ? [] : '';
       }
     },
     options: {
@@ -109,7 +108,7 @@ export default {
     placeholder: {
       type: String,
       default () {
-        return '请选择'
+        return '请选择';
       }
     },
     filter: {
@@ -127,14 +126,16 @@ export default {
     border: {
       type: String,
       default () {
-        return 'outline'
+        return 'outline';
       },
-      validator: value => {return ['underline', 'outline'].indexOf(value) > -1}
+      validator: value => {
+        return ['underline', 'outline'].indexOf(value) > -1
+      }
     },
     noDataMsg: {
       type: String,
       default () {
-        return '暂无数据'
+        return '暂无数据';
       }
     }
   },
@@ -144,7 +145,8 @@ export default {
       selection: null,
       opts: [],
       focused: false,
-      showAllOpts: true
+      showAllOpts: true,
+      active: false
     }
   },
   watch: {
@@ -154,7 +156,7 @@ export default {
       handler (val, oldVal) {
         this.selection = val
         if ((val === '' || val.length === 0) && !this.focused) {
-          this.inputValue = ''
+          this.inputValue = '';
           return false
         } else {
           this._calcSelectLabel(val, this.options)
@@ -166,8 +168,11 @@ export default {
       immediate: true,
       handler (val, oldVal) {
         this.opts = val
-        if ((this.selection === '' || this.selection.length === 0) && !this.focused) {
-          this.inputValue = ''
+        if (
+          (this.selection === '' || this.selection.length === 0) &&
+          !this.focused
+        ) {
+          this.inputValue = '';
           return false
         } else {
           this._calcSelectLabel(this.selection, val)
@@ -199,8 +204,10 @@ export default {
   },
   methods: {
     _select (opt) {
+      this.active = true
       this.focused = false
       if (!this.mutiple) {
+        this.active = false
         this.selection = opt.value
         this.$refs.popover.hide()
       }
@@ -211,18 +218,21 @@ export default {
     },
     _input () {
       this.showAllOpts = true
+      this.active = true
       if (this.filter && !this.disabled && !this.autocompele) {
         this._filter()
       }
       if (this.autocomplete) {
         let _self = this
         const emit = function () {
+          _self.active = false
           _self.$emit('search', _self.inputValue)
-        }
+        };
         debounce(emit())
       }
     },
     _focus () {
+      this.active = true
       if (this.showAllOpts) {
         this.opts = this.options
       }
@@ -230,7 +240,7 @@ export default {
     },
     _calcSelectLabel (value, options) {
       if (this.mutiple) {
-        this.inputValue = ''
+        this.inputValue = '';
       } else {
         options.forEach(opt => {
           if (value === opt.value) {
@@ -241,7 +251,7 @@ export default {
     },
     _filter () {
       if (!this.mutiple) {
-        this.selection = ''
+        this.selection = '';
         this.$emit('input', this.selection)
         this.$emit('select', { label: '', value: '' })
       }
@@ -251,7 +261,10 @@ export default {
         this.showAllOpts = false
         let res = []
         this.options.forEach(opt => {
-          if (opt.label.includes(this.inputValue) || opt.value.includes(this.inputValue)) {
+          if (
+            opt.label.includes(this.inputValue) ||
+            opt.value.includes(this.inputValue)
+          ) {
             res.push(opt)
           }
         })
@@ -265,5 +278,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

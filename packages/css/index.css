@@ -488,7 +488,7 @@
   --color-tertiary: #000;
   --color-positive: #21ba45;
   --color-error: #ed4014;
-  --color-info: #31ccec;
+  --color-info: #777;
   --color-success: #67c23a;
   --color-warning: #f2c037;
   --color-light: #050608;
@@ -4148,7 +4148,7 @@
   text-align-last: justify;
 }
 
-.form-input {
+.x-input {
   padding: 3px 5px;
   display: inline-block;
   text-overflow: ellipsis;
@@ -4158,8 +4158,12 @@
   transition: all 0.3s ease;
 }
 
-.form-input input,
-.form-input textarea {
+.x-input.hover {
+  border-color: var(--color-primary);
+}
+
+.x-input input,
+.x-input textarea {
   outline: none;
   border: none;
   font-size: inherit;
@@ -4169,37 +4173,37 @@
   color: inherit;
 }
 
-.form-input textarea {
+.x-input textarea {
   resize: vertical;
 }
 
-.form-input input:disabled,
-.form-input textarea:disabled {
+.x-input input:disabled,
+.x-input textarea:disabled {
   background-color: transparent;
   color: inherit;
 }
 
-.form-input input::-webkit-outer-spin-button,
-.form-input textarea::-webkit-outer-spin-button,
-.form-input input::-webkit-inner-spin-button {
+.x-input input::-webkit-outer-spin-button,
+.x-input textarea::-webkit-outer-spin-button,
+.x-input input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.form-input input[type="number"] {
+.x-input input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.form-select {
+.x-select {
   display: inline-block;
   width: 180px;
   cursor: pointer;
 }
 
-.form-select input {
+.x-select input {
   cursor: pointer;
 }
 
-.form-select .selected-tip {
+.x-select .selected-tip {
   display: inline-block;
   border: 1px solid #f3f3f3;
   border-radius: 10px;
@@ -4211,28 +4215,28 @@
   text-overflow: ellipsis;
 }
 
-.form-select .selected-tip:hover {
-  background-color: #1493ff;
+.x-select .selected-tip:hover {
+  background-color: var(--color-primary);
   color: #fff;
 }
 
-.form-select .select-popover {
+.x-select .select-popover {
   max-height: 200px;
   overflow: auto;
 }
 
-.form-select ul {
+.x-select ul {
   padding: 5px 0;
 }
 
-.form-select ul li {
+.x-select ul li {
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 12px;
 }
 
-.form-select ul li:hover {
+.x-select ul li:hover {
   background-color: #f0f0f0;
 }
 
@@ -4250,6 +4254,10 @@
   position: absolute;
   padding-left: 4px;
   display: inline-block;
+}
+
+.no-icon-checked {
+  color: var(--color-primary);
 }
 
 .x-datepicker {
@@ -4378,6 +4386,18 @@
   border-color: var(--color-primary);
 }
 
+.x-btn.x-btn--warning {
+  color: #fff;
+  background-color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+
+.x-btn.x-btn--info {
+  color: #fff;
+  background-color: var(--color-info);
+  border-color: var(--color-info);
+}
+
 .x-btn.x-btn--success {
   color: #fff;
   background-color: var(--color-success);
@@ -4461,6 +4481,7 @@
 }
 
 .x-card {
+  width: 350px;
   border-radius: 4px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -4490,7 +4511,7 @@
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.f-notify {
+.x-notify {
   position: fixed;
   top: 40px;
   text-align: center;
@@ -4507,27 +4528,36 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.f-notify.info {
+.x-notify.info {
   background-color: var(--color-info);
 }
 
-.f-notify.success {
-  background-color: var(--color-positive);
+.x-notify.success {
+  background-color: var(--color-success);
 }
 
-.f-notify.error {
-  background-color: var(--color-negative);
+.x-notify.error {
+  background-color: var(--color-error);
 }
 
-.f-notify.warning {
+.x-notify.warning {
   background-color: var(--color-warning);
 }
 
 .x-breadcrumb {
   width: 100%;
   font-size: 14px;
+}
+
+.x-breadcrumb a {
   color: #000000;
   font-weight: 600;
+  transition: color 0.2s;
+}
+
+.x-breadcrumb a:hover {
+  color: var(--color-primary);
+  transition: color 0.2s;
 }
 
 .x-breadcrumb .active {
@@ -4665,43 +4695,43 @@ label {
   z-index: 999;
 }
 
-.f-table {
+.x-table {
   border-collapse: collapse;
   width: 100%;
   font-size: 12px;
 }
 
-.f-table thead th {
+.x-table thead th {
   padding: 8px 0;
   font-size: 14px;
   font-weight: 600;
 }
 
-.f-table tbody tr {
+.x-table tbody tr {
   transition: all ease 0.3s;
 }
 
-.f-table tbody tr:hover {
+.x-table tbody tr:hover {
   background-color: rgba(217, 235, 255, 0.4);
 }
 
-.f-table th {
+.x-table th {
   white-space: nowrap;
   overflow: hidden;
   background-color: #f8f8f9;
 }
 
-.f-table tr {
+.x-table tr {
   border-bottom: 1px solid #e8eaec;
 }
 
-.f-table th,
-.f-table td {
+.x-table th,
+.x-table td {
   padding: 15px 0;
 }
 
-.f-table th .cell,
-.f-table td .cell {
+.x-table th .cell,
+.x-table td .cell {
   padding-left: 18px;
   padding-right: 18px;
   overflow: hidden;
@@ -4711,7 +4741,7 @@ label {
   box-sizing: border-box;
 }
 
-.f-table .no-data-container {
+.x-table .no-data-container {
   padding: 30px 0;
 }
 
@@ -4719,7 +4749,7 @@ label {
   background-color: #f8f8f9;
 }
 
-.f-loading {
+.x-loading {
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
@@ -4829,11 +4859,13 @@ label {
   padding: 4px 8px;
   overflow: hidden;
   position: relative;
+  justify-content: space-around;
   min-height: 35px;
   border-bottom: 1px solid #f0f0f0;
 }
 
-.toolbar .toolbar-title {
+.toolbar-title {
+  padding: 10px;
   flex: 1;
   min-width: 1px;
   max-width: 100%;
@@ -4856,7 +4888,7 @@ label {
   background-color: #f3f3f3;
 }
 
-.f-popover {
+.x-popover {
   display: none;
   background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -4868,12 +4900,13 @@ label {
   max-height: 65vh;
   max-width: 100vw;
   z-index: 99;
-  animation: f-popup-down 0.42s;
+  animation: x-popup-down 0.42s;
   transform-origin: left top 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.1s ease;
 }
 
-.f-tips {
+.x-tips {
   position: absolute;
   padding: 5px 10px;
   border-radius: 5px;
@@ -4881,12 +4914,12 @@ label {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 99;
-  animation: f-popup-up 0.42s;
+  animation: x-popup-up 0.42s;
   transform-origin: left top 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.f-tips::after {
+.x-tips::after {
   content: "";
   width: 10px;
   height: 10px;
@@ -4899,7 +4932,7 @@ label {
   transform: rotate(45deg);
 }
 
-@keyframes f-popup-up {
+@keyframes x-popup-up {
   0% {
     opacity: 0;
     transform: translateY(1) scaleY(0.5);
@@ -4910,7 +4943,7 @@ label {
   }
 }
 
-@keyframes f-popup-down {
+@keyframes x-popup-down {
   0% {
     opacity: 0;
     transform: translateY(0) scaleY(0.3);
@@ -4945,7 +4978,7 @@ label {
   float: right;
 }
 
-.f-carousel {
+.x-carousel {
   width: 100%;
   min-height: 200px;
   min-height: 220px;
@@ -4953,20 +4986,20 @@ label {
   position: relative;
 }
 
-.f-carousel .f-carousel-prev {
+.x-carousel .x-carousel-prev {
   position: absolute;
   left: 10px;
   top: calc(50% - 12px);
 }
 
-.f-carousel .f-carousel-next {
+.x-carousel .x-carousel-next {
   position: absolute;
   right: 10px;
   top: calc(50% - 12px);
 }
 
-.f-carousel .left-icon,
-.f-carousel .right-icon {
+.x-carousel .left-icon,
+.x-carousel .right-icon {
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
@@ -4975,12 +5008,12 @@ label {
   transition: background 0.3s ease;
 }
 
-.f-carousel .left-icon:hover,
-.f-carousel .right-icon:hover {
+.x-carousel .left-icon:hover,
+.x-carousel .right-icon:hover {
   background: #bdbdbd;
 }
 
-.f-carousel .f-carousel-controls {
+.x-carousel .x-carousel-controls {
   position: absolute;
   bottom: 0px;
   width: 100%;
@@ -4989,7 +5022,7 @@ label {
   background-color: rgba(189, 189, 189, 0.6);
 }
 
-.f-carousel .f-carousel-controls .f-carousel-controls-item {
+.x-carousel .x-carousel-controls .x-carousel-controls-item {
   color: #fff;
   opacity: 0.5;
   font-size: 14px;
@@ -5001,25 +5034,25 @@ label {
   transition: all ease 0.3s;
 }
 
-.f-carousel .f-carousel-controls .f-carousel-controls-item.active, .f-carousel .f-carousel-controls .f-carousel-controls-item:hover {
+.x-carousel .x-carousel-controls .x-carousel-controls-item.active, .x-carousel .x-carousel-controls .x-carousel-controls-item:hover {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
 }
 
-.f-carousel .f-carousel-item-caontainer {
+.x-carousel .x-carousel-item-caontainer {
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
   height: 100%;
 }
 
-.f-carousel .f-carousel-item {
+.x-carousel .x-carousel-item {
   flex: 0 0 100%;
   position: relative;
 }
 
-.f-progress {
+.x-progress {
   min-width: 150px;
   border-radius: 5px;
   background: #ddd;
@@ -5027,7 +5060,7 @@ label {
   min-height: 5px;
 }
 
-.f-progress .f-progress-active {
+.x-progress .x-progress-active {
   transition: all ease 0.3s;
   position: absolute;
   left: 0;
@@ -5035,29 +5068,29 @@ label {
   height: 100%;
 }
 
-.f-progress .f-progress-label {
+.x-progress .x-progress-label {
   font-size: 12px;
 }
 
-.f-tree {
+.x-tree {
   color: #777;
 }
 
-.f-tree .f-tree-node {
+.x-tree .x-tree-node {
   cursor: pointer;
 }
 
-.f-tree .f-tree-node .f-tree-node-content {
+.x-tree .x-tree-node .x-tree-node-content {
   height: 30px;
   line-height: 30px;
   border-radius: 5px;
   padding: 0 10px;
 }
 
-.f-tree .f-tree-node .f-tree-node-content:hover {
+.x-tree .x-tree-node .x-tree-node-content:hover {
   background-color: #f4f4f4;
 }
 
-.f-tree .f-tree-node .f-tree-node-content.active {
+.x-tree .x-tree-node .x-tree-node-content.active {
   color: var(--color-primary);
 }

@@ -2,27 +2,26 @@
  * @Descripttion:
  * @Author:
  * @Date: 2019-12-29 17:02:27
- * @LastEditors:
- * @LastEditTime: 2019-12-29 17:59:43
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-03-19 10:43:19
  */
 import XBtn from './components/btn/index'
-import FField from './components/field/index'
-import FInput from './components/input/index'
-import FSelect from './components/select/index'
-import FRadio from './components/radio/index'
-import FCheckbox from './components/checkbox/index'
+import XInput from './components/input/index'
+import XSelect from './components/select/index'
+import XRadio from './components/radio/index'
+import XCheckbox from './components/checkbox/index'
 import XIcon from './components/icon/index'
-import FModal from './components/modal/index'
-import FTable from './components/table/index'
-import FPopover from './components/popover/index'
+import XModal from './components/modal/index'
+import XTable from './components/table/index'
+import XPopover from './components/popover/index'
 import XCard from './components/card/index'
 import XBreadcrumb from './components/breadcrumb/index'
-import FCarousel from './components/carousel/index'
-import FCarouselItem from './components/carousel/item'
-import FProgress from './components/progress/index'
-import FDatepicker from './components/datepicker/index'
-import FTips from './components/tips/index'
-import FTree from './components/tree/index'
+import XCarousel from './components/carousel/index'
+import XCarouselItem from './components/carousel/item'
+import XProgress from './components/progress/index'
+import XDatepicker from './components/datepicker/index'
+import XTips from './components/tips/index'
+import XTree from './components/tree/index'
 
 import XNotify from './components/notify/index.js'
 import Loading from './directives/loading/index'
@@ -32,23 +31,22 @@ import { platform } from './utils/function'
 
 const components = [
   XBtn,
-  FInput,
-  FSelect,
-  FRadio,
-  FCheckbox,
+  XInput,
+  XSelect,
+  XRadio,
+  XCheckbox,
   XIcon,
-  FModal,
-  FTable,
-  FPopover,
+  XModal,
+  XTable,
+  XPopover,
   XCard,
   XBreadcrumb,
-  FField,
-  FCarousel,
-  FCarouselItem,
-  FProgress,
-  FDatepicker,
-  FTips,
-  FTree
+  XCarousel,
+  XCarouselItem,
+  XProgress,
+  XDatepicker,
+  XTips,
+  XTree
 ]
 
 const install = function (Vue) {
@@ -73,24 +71,23 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   XBtn,
-  FInput,
-  FSelect,
-  FRadio,
-  FCheckbox,
+  XInput,
+  XSelect,
+  XRadio,
+  XCheckbox,
   XIcon,
-  FModal,
-  FTable,
-  FPopover,
+  XModal,
+  XTable,
+  XPopover,
   XCard,
   Loading,
   CloseOverlay,
   XNotify,
   XBreadcrumb,
-  FField,
-  FCarousel,
-  FCarouselItem,
-  FProgress,
-  FDatepicker,
-  FTips,
-  FTree
+  XCarousel,
+  XCarouselItem,
+  XProgress,
+  XDatepicker,
+  XTips,
+  XTree
 }

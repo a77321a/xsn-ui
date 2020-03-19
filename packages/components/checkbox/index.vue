@@ -14,19 +14,18 @@
       :size="size"
       class="cursor-pointer text-bold"
     />
-    <template
-      v-if="label"
-    >
-      {{label}}
+    <template v-if="label">
+      <span :class="checked && !showIcon ? 'no-icon-checked' : ''">{{
+        label
+      }}</span>
     </template>
   </span>
-
 </template>
 
 <script>
-import { contain, objectIsEqual } from '../../utils/function'
+import { contain, objectIsEqual } from '../../utils/function';
 export default {
-  name: 'FCheckbox',
+  name: 'XCheckbox',
   props: {
     value: {
       required: true,
@@ -54,31 +53,32 @@ export default {
     checkedIcon: {
       type: String,
       default () {
-        return 'tick'
+        return 'tick';
       }
     },
     unCheckedIcon: {
       type: String,
       default () {
-        return 'checkbox'
+        return 'checkbox';
       }
     },
     color: {
       type: String,
       default () {
-        return 'blue'
+        return 'blue';
       }
     },
     size: {
       type: String,
       default () {
-        return '12px'
+        return '12px';
       }
     },
     label: {
+      required: true,
       type: String,
       default () {
-        return ''
+        return '';
       }
     }
   },
@@ -123,5 +123,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

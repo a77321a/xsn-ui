@@ -1,7 +1,6 @@
 <template>
-  <div class="f-tree">
-
-    <f-tree-node
+  <div class="x-tree">
+    <x-tree-node
       :nodes="nodes"
       :selected.sync="selection"
       :mutiple="mutiple"
@@ -15,75 +14,73 @@
 </template>
 
 <script>
-import FTreeNode from './node'
+import XTreeNode from "./node";
 export default {
-  name: 'FTree',
+  name: "XTree",
   components: {
-    FTreeNode
+    XTreeNode
   },
   props: {
     nodes: {
       type: Array,
       required: true,
-      default () {
-        return []
+      default() {
+        return [];
       }
     },
     selected: {
       type: Array | String | Number,
-      default: ''
+      default: ""
     },
     mutiple: {
       type: Boolean,
-      default () {
-        return false
+      default() {
+        return false;
       }
     },
     leaf: {
       type: Boolean,
-      default () {
-        return false
+      default() {
+        return false;
       }
     },
     accordion: {
       type: Boolean,
-      default () {
-        return false
+      default() {
+        return false;
       }
     },
     expandAll: {
       type: Boolean,
-      default () {
-        return false
+      default() {
+        return false;
       }
     },
     activeColor: {
       type: String,
-      default () {
-        return 'positive'
+      default() {
+        return "positive";
       }
     }
   },
-  data () {
+  data() {
     return {
       selection: this.selected
-    }
+    };
   },
   watch: {
     deep: true,
-    handler (val, oldVal) {
-      this.selection = selected
+    handler(val, oldVal) {
+      this.selection = selected;
     }
   },
   methods: {
-    _select (value) {
-      this.$emit('select', this.selection)
-      this.$emit('update:selected', this.selection)
+    _select(value) {
+      this.$emit("select", this.selection);
+      this.$emit("update:selected", this.selection);
     }
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

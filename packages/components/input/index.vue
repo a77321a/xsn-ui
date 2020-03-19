@@ -1,10 +1,13 @@
 <template>
   <div
-    class="form-input"
-    :class="[border === 'underline' ? 'border-bottom-default' : 'border-default border-radius', disabled ? 'disabled' : '']"
-    :style="{
-      borderColor: active ? '#bdbdbd' : '',
-    }"
+    class="x-input"
+    :class="[
+      border === 'underline'
+        ? 'border-bottom-default'
+        : 'border-default border-radius',
+      disabled ? 'disabled' : '',
+      active ? 'hover' : ''
+    ]"
   >
     <template v-if="type !== 'textarea'">
       <input
@@ -24,13 +27,14 @@
         @blur="_blur"
         @keyup="_keyup"
         @keydown.enter="_enter"
-      >
+      />
       <div
         v-if="clearable || after"
         class="absolute-right row items-center flex-center pr-sm"
       >
         <x-icon
           v-if="clearable"
+          v-show="inputValue != ''"
           name="close"
           size="12px"
           @click="_clear"
@@ -68,18 +72,18 @@
 
 <script>
 export default {
-  name: 'FInput',
+  name: 'XInput',
   props: {
     value: {
       type: Number | String,
       default () {
-        return ''
+        return '';
       }
     },
     placeholder: {
       type: String,
       default () {
-        return '请输入'
+        return '请输入';
       }
     },
     after: {
@@ -91,9 +95,11 @@ export default {
     type: {
       type: String,
       default () {
-        return 'text' // text or number
+        return 'text'; // text or number
       },
-      validator: value => {return ['text', 'number', 'textarea'].indexOf(value) > -1}
+      validator: value => {
+        return ['text', 'number', 'textarea'].indexOf(value) > -1
+      }
     },
     min: {
       type: Number,
@@ -110,9 +116,11 @@ export default {
     border: {
       type: String,
       default () {
-        return 'outline'
+        return 'outline';
       },
-      validator: value => {return ['underline', 'outline'].indexOf(value) > -1}
+      validator: value => {
+        return ['underline', 'outline'].indexOf(value) > -1
+      }
     },
     clearable: {
       type: Boolean,
@@ -166,7 +174,7 @@ export default {
       this.$emit('enter', this.inputValue)
     },
     _clear () {
-      this.inputValue = ''
+      this.inputValue = '';
       this._input()
       this.$emit('clear')
     },
@@ -190,5 +198,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

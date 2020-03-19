@@ -16,9 +16,9 @@
 
     <div class="bg-primary pa-sm border-radius mt-md" style="width: 100px">
       <span class="inline-block full-width text-white font-normal text-center cursor-pointer">点击弹出</span>
-      <f-popover class="pa-sm font-normal">
+      <x-popover class="pa-sm font-normal">
         这是弹出框popover
-      </f-popover>
+      </x-popover>
     </div>
 
     <x-table

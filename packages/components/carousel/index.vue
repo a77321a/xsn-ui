@@ -1,12 +1,7 @@
 <template>
-  <div
-    ref="carousel"
-    class="f-carousel"
-    :style="{height: height}"
-  >
-
+  <div ref="carousel" class="x-carousel" :style="{ height: height }">
     <div
-      class="f-carousel-item-caontainer"
+      class="x-carousel-item-caontainer"
       :style="{
         transform: transform,
         transition: 'transform ease ' + transitionTime + 's'
@@ -16,36 +11,26 @@
     </div>
 
     <!-- left and right arrows -->
-    <div class="f-carousel-prev">
-      <x-icon
-        name="return"
-        size="24px"
-        class="left-icon"
-        @click="prev"
-      />
+    <div class="x-carousel-prev">
+      <x-icon name="return" size="24px" class="left-icon" @click="prev" />
     </div>
 
-    <div class="f-carousel-next">
-      <x-icon
-        name="next"
-        size="24px"
-        class="right-icon"
-        @click="next"
-      />
+    <div class="x-carousel-next">
+      <x-icon name="next" size="24px" class="right-icon" @click="next" />
     </div>
 
     <!-- end -->
 
     <!-- bottom controls -->
-    <div class="f-carousel-controls">
+    <div class="x-carousel-controls">
       <span
         v-for="item in carouselItemLength"
         :key="'f_carousel_controls_item_' + item"
-        class="f-carousel-controls-item"
+        class="x-carousel-controls-item"
         :class="item === index ? 'active' : ''"
         @click="jump(item)"
       >
-        {{item}}
+        {{ item }}
       </span>
     </div>
     <!-- end -->
@@ -54,7 +39,7 @@
 
 <script>
 export default {
-  name: 'FCarousel',
+  name: 'XCarousel',
   props: {
     value: {
       type: Number,
@@ -65,7 +50,7 @@ export default {
     height: {
       type: String,
       default () {
-        return '200px'
+        return '200px';
       }
     },
     duration: {
@@ -97,14 +82,14 @@ export default {
     carouselItemLength () {
       let res = 0
       this.$slots.default.forEach(v => {
-        if (v.tag !== undefined && v.tag.indexOf('FCarouselItem') > -1) {
+        if (v.tag !== undefined && v.tag.indexOf('XCarouselItem') > -1) {
           res += 1
         }
       })
       return res
     },
     transform () {
-      return 'translateX(' + (-(this.index - 1)) * 100 + '%)'
+      return 'translateX(' + -(this.index - 1) * 100 + '%)';
     }
   },
   beforeMount () {
@@ -132,7 +117,6 @@ export default {
       }
       this.$emit('input', this.index)
       this._reStartInterval()
-
     },
     next () {
       if (this.index === this.carouselItemLength) {
@@ -144,14 +128,12 @@ export default {
       }
       this.$emit('input', this.index)
       this._reStartInterval()
-
     },
     jump (idx) {
       this.transitionTime = 0.3 * Math.abs(idx - this.index)
 
       this.index = idx
       this._reStartInterval()
-
     },
     _reStartInterval () {
       if (this.autoplay) {
@@ -166,5 +148,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion:
+ * @Author:
+ * @Date: 2020-03-19 09:40:00
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-03-19 09:45:48
+ -->
+
 # xui
 
 > a vue ui components project
@@ -12,7 +20,7 @@
 
 ```bash
 # install dependencies
-npm install f-vue-ui
+npm install xsn-ui
 
 import xsnUI from 'xsn-ui'
 # if you do not have sass

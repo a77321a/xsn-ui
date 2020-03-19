@@ -126,7 +126,6 @@ label {
 .text-bold {
   font-weight: 600 !important;
 }
-
 // z-index
 .z-top {
   z-index: 99999999999999999999999;
@@ -134,8 +133,8 @@ label {
 .z-middle {
   z-index: 999;
 }
-// table
-.f-table {
+// 表格样式
+.x-table {
   border-collapse: collapse;
   width: 100%;
   font-size: 12px;
@@ -182,7 +181,7 @@ label {
 }
 
 // loading
-.f-loading {
+.x-loading {
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
@@ -195,7 +194,7 @@ label {
   z-index: 999;
 }
 
-// mask-layer
+// 蒙层样式
 .mask-layer {
   position: fixed;
   left: 0;
@@ -206,7 +205,7 @@ label {
   z-index: 99;
 }
 
-// modal
+// 弹出层样式
 .modal {
   border: none;
   z-index: 999999;
@@ -280,41 +279,41 @@ label {
     min-height: 40vh;
   }
 }
-
+// bar样式
 .toolbar {
   display: flex;
   align-items: center;
   padding: 4px 8px;
   overflow: hidden;
   position: relative;
+  justify-content: space-around;
   min-height: 35px;
   border-bottom: 1px solid #f0f0f0;
-
-  .toolbar-title {
-    flex: 1;
-    min-width: 1px;
-    max-width: 100%;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 400;
-  }
+}
+.toolbar-title {
+  padding: 10px;
+  flex: 1;
+  min-width: 1px;
+  max-width: 100%;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .font-normal {
   font-size: 12px;
 }
-
+// 园按钮样式
 .round-icon {
   display: inline-block;
   cursor: pointer;
   border-radius: 50%;
-
   &:hover {
     background-color: #f3f3f3;
   }
 }
-
-.f-popover {
+// 气泡框样式
+.x-popover {
   display: none;
   background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -326,12 +325,13 @@ label {
   max-height: 65vh;
   max-width: 100vw;
   z-index: 99;
-  animation: f-popup-down 0.42s;
+  animation: x-popup-down 0.42s;
   transform-origin: left top 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.1s ease;
 }
-
-.f-tips {
+// 小提示样式
+.x-tips {
   position: absolute;
   padding: 5px 10px;
   border-radius: 5px;
@@ -339,10 +339,9 @@ label {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 99;
-  animation: f-popup-up 0.42s;
+  animation: x-popup-up 0.42s;
   transform-origin: left top 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-
   &::after {
     content: "";
     width: 10px;
@@ -356,11 +355,9 @@ label {
     transform: rotate(45deg);
   }
 }
-
-@keyframes f-popup-up {
+@keyframes x-popup-up {
   0% {
     opacity: 0;
-
     transform: translateY(1) scaleY(0.5);
     pointer-events: none;
   }
@@ -369,7 +366,7 @@ label {
   }
 }
 
-@keyframes f-popup-down {
+@keyframes x-popup-down {
   0% {
     opacity: 0;
     transform: translateY(0) scaleY(0.3);
@@ -422,26 +419,23 @@ label {
 .float-right {
   float: right;
 }
-
-.f-carousel {
+// 走马灯样式
+.x-carousel {
   width: 100%;
   min-height: 200px;
   min-height: 220px;
   overflow: hidden;
   position: relative;
-
-  .f-carousel-prev {
+  .x-carousel-prev {
     position: absolute;
     left: 10px;
     top: calc(50% - 12px);
   }
-
-  .f-carousel-next {
+  .x-carousel-next {
     position: absolute;
     right: 10px;
     top: calc(50% - 12px);
   }
-
   .left-icon,
   .right-icon {
     padding: 5px;
@@ -455,16 +449,14 @@ label {
       background: rgba(189, 189, 189, 1);
     }
   }
-
-  .f-carousel-controls {
+  .x-carousel-controls {
     position: absolute;
     bottom: 0px;
     width: 100%;
     text-align: center;
     padding: 8px 20px;
     background-color: rgba(189, 189, 189, 0.6);
-
-    .f-carousel-controls-item {
+    .x-carousel-controls-item {
       color: #fff;
       opacity: 0.5;
       font-size: 14px;
@@ -474,7 +466,6 @@ label {
       cursor: pointer;
       display: inline-block;
       transition: all ease 0.3s;
-
       &.active,
       &:hover {
         opacity: 1;
@@ -483,58 +474,57 @@ label {
       }
     }
   }
-
-  .f-carousel-item-caontainer {
+  .x-carousel-item-caontainer {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
     height: 100%;
   }
-
-  .f-carousel-item {
+  .x-carousel-item {
     flex: 0 0 100%;
     position: relative;
   }
 }
-
-.f-progress {
+// 进度条样式
+.x-progress {
   min-width: 150px;
   border-radius: 5px;
   background: #ddd;
   position: relative;
   min-height: 5px;
-
-  .f-progress-active {
+  .x-progress-active {
     transition: all ease 0.3s;
     position: absolute;
     left: 0;
     border-radius: 5px;
     height: 100%;
   }
-  .f-progress-label {
+  .x-progress-label {
     font-size: 12px;
   }
 }
-
-.f-tree {
+// 树形组件样式
+.x-tree {
   color: #777;
-
-  .f-tree-node {
+  .x-tree-node {
     cursor: pointer;
-
-    .f-tree-node-content {
+    .x-tree-node-content {
       height: 30px;
       line-height: 30px;
       border-radius: 5px;
       padding: 0 10px;
-
       &:hover {
         background-color: #f4f4f4;
       }
-
       &.active {
         color: var(--color-primary);
       }
     }
   }
 }
+// 输入框样式
+// .x-input {
+//   .hover {
+//     border-color: var(--color-primary);
+//   }
+// }

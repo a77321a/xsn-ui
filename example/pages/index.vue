@@ -31,7 +31,7 @@
 
         // example for input
 
-        &lt;f-input v-model="inputValue"/&gt;
+        &lt;x-input v-model="inputValue"/&gt;
       </pre>
     </div>
 
@@ -45,15 +45,22 @@
           :class="$route.path === menu.path ? 'text-primary' : ''"
           @click="_link(menu)"
         >
-          <span class="menu-item-span inline-block full-width">{{ menu.name }}</span>
-          <ul v-if="menu.children && menu.children.length > 0" class="pl-md mt-sm">
+          <span class="menu-item-span inline-block full-width">{{
+            menu.name
+          }}</span>
+          <ul
+            v-if="menu.children && menu.children.length > 0"
+            class="pl-md mt-sm"
+          >
             <li
               v-for="(child, childIdx) in menu.children"
               :key="'cmp_menu_child_' + childIdx"
               class="menu-item-child"
               :class="$route.path === child.path ? 'text-primary' : ''"
               @click.stop="_link(child)"
-            >{{ child.name }}</li>
+            >
+              {{ child.name }}
+            </li>
           </ul>
         </li>
       </ul>
@@ -62,7 +69,7 @@
 </template>
 
 <script>
-import menuData from '../components/menubar/menus.js'
+import menuData from '../components/menubar/menus.js';
 export default {
   name: 'pageIndex',
   data () {
@@ -80,5 +87,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

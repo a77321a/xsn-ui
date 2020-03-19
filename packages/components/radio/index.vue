@@ -11,13 +11,13 @@
       :size="size"
       class="cursor-pointer text-bold"
     />
-    {{label}}
+    {{ label }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FRadio',
+  name: "XRadio",
   props: {
     value: {
       required: true,
@@ -26,31 +26,31 @@ export default {
     checkedIcon: {
       type: String,
       default() {
-        return 'tick'
+        return "tick";
       }
     },
     unCheckedIcon: {
       type: String,
       default() {
-        return 'radio'
+        return "radio";
       }
     },
     color: {
       type: String,
       default() {
-        return 'blue'
+        return "blue";
       }
     },
     label: {
       type: String,
       default() {
-        return ''
+        return "";
       }
     },
     size: {
       type: String,
       default() {
-        return '12px'
+        return "12px";
       }
     },
     val: {
@@ -60,17 +60,16 @@ export default {
   },
   data() {
     return {
-      unCheckedColor: 'faded'
-    }
+      unCheckedColor: "faded"
+    };
   },
   methods: {
     _select() {
-      this.$emit('input', this.val)
-      this.$emit('click')
+      this.$emit("input", this.val);
+      this.$emit("click");
     }
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>

@@ -3,11 +3,12 @@
     <a
       href="https://github.com/a77321a/xsn-ui/blob/master/src/pages/radio/index.vue"
       target="_blank"
-    >样例源码</a>
+      >样例源码</a
+    >
     <h6>基本用法：</h6>
-    <f-radio v-model="radioModel" val="test1" label="test1" />
-    <f-radio v-model="radioModel" val="test2" label="test2" />
-    <f-radio v-model="radioModel" val="test3" label="test3" />
+    <x-radio v-model="radioModel" val="test1" label="test1" />
+    <x-radio v-model="radioModel" val="test2" label="test2" />
+    <x-radio v-model="radioModel" val="test3" label="test3" />
 
     <x-table
       class="mt-md"
@@ -29,17 +30,16 @@
 </template>
 
 <script>
-import config from './config'
+import config from "./config";
 export default {
-  name: 'pageRadio',
+  name: "pageRadio",
   data() {
     return {
       config,
-      radioModel: ''
-    }
+      radioModel: ""
+    };
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>
